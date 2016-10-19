@@ -1,0 +1,8 @@
+applications:
+- name: dynamicdialog
+  memory: 128M
+  path: dyndialog-webapp
+  random-route: true
+  command: python app.py
+  services:
+  - NaturalLanguageClassifier

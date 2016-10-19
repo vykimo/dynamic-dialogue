@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.irl:IRLRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.irl="http://ilog.rules.studio/model/irl.ecore">
+  <name>Insert Customer Profile</name>
+  <uuid>9aacfe2d-31e1-4ff7-9917-4aa11d8df61d</uuid>
+  <definition><![CDATA[when {
+  Assessment() from assessment;
+  profile : CustomerContext() from assessment.customerContext;
+}
+then {
+ insert profile;
+}]]></definition>
+  <imports><![CDATA[import com.ibm.dd.ctx.CustomerContext;]]></imports>
+  <imports><![CDATA[import com.ibm.dd.q.Assessment;]]></imports>
+  <imports><![CDATA[use assessment;]]></imports>
+</ilog.rules.studio.model.irl:IRLRule>

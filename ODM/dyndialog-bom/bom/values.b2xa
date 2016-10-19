@@ -1,0 +1,38 @@
+<b2x:translation xmlns:b2x="http://schemas.ilog.com/JRules/1.3/Translation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.ilog.com/JRules/1.3/Translation ilog/rules/schemas/1_3/b2x.xsd">
+    <id>6acb680b-ffbd-48db-b1d8-7b5d94a4371d</id>
+    <lang>ARL</lang>
+    <class>
+        <businessName>dd.lovs.Status</businessName>
+        <executionName>java.lang.String</executionName>
+        <attribute>
+            <name>Completed</name>
+            <getter language="irl"><![CDATA[
+            return "Completed";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>DataCompleted</name>
+            <getter language="irl"><![CDATA[
+            return "DataCompleted";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Investigation</name>
+            <getter language="irl"><![CDATA[
+            return "Investigation";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>New</name>
+            <getter language="irl"><![CDATA[
+            return "New";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Uncompleted</name>
+            <getter language="irl"><![CDATA[
+            return "Uncompleted";
+            ]]></getter>
+        </attribute>
+    </class>
+</b2x:translation>

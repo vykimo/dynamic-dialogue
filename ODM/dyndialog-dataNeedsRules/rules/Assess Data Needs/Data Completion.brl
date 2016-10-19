@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Data Completion</name>
+  <uuid>9e030a71-2ecb-4583-b8a3-135e58a266f8</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+  the customer's profile of 'the assessment' is not null
+  and
+  the number of elements in the owned products of the customer's profile of 'the assessment' is at least 1
+  and
+  the status of 'the assessment' is one of { Uncompleted  , New  }
+then
+ set the status of 'the assessment' to DataCompleted  ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

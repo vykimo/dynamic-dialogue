@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.irl:IRLRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.irl="http://ilog.rules.studio/model/irl.ecore">
+  <name>Insert Device</name>
+  <uuid>aaedfcc5-c202-40f0-9ae4-a474d5b45ada</uuid>
+  <definition><![CDATA[when {
+  profile: CustomerContext();
+  device : Product() from profile.impactedProduct;
+}
+then {
+  insert device;
+}]]></definition>
+  <imports><![CDATA[import com.ibm.dd.ctx.Product;]]></imports>
+  <imports><![CDATA[import com.ibm.dd.q.Assessment;]]></imports>
+  <imports><![CDATA[import com.ibm.dd.ctx.CustomerContext;]]></imports>
+  <imports><![CDATA[use assessment;]]></imports>
+</ilog.rules.studio.model.irl:IRLRule>

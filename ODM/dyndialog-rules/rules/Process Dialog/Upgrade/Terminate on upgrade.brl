@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Terminate on upgrade</name>
+  <uuid>4cec6821-b9f7-40d4-8302-96e79a9219ae</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions
+set answer to a response in the responses of 'the assessment' 
+where the question label of this response contains "eligible for an upgrade";
+
+if 
+ the value of answer is "Yes"
+then
+ set the status of 'the assessment' to Completed ;
+]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

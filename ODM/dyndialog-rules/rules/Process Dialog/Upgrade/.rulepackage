@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Upgrade</name>
+  <uuid>57b681bf-b53c-44cf-8fb9-d8f637eb9267</uuid>
+</ilog.rules.studio.model.base:RulePackage>

@@ -1,0 +1,10 @@
+# Vocabulary Properties
+uuid = b514537e-0b21-429d-a3fd-a8c36c5926ef
+
+# dd.lovs.Status
+dd.lovs.Status#concept.label = status
+dd.lovs.Status.Completed#instance.label = Completed
+dd.lovs.Status.DataCompleted#instance.label = DataCompleted
+dd.lovs.Status.Investigation#instance.label = Investigation
+dd.lovs.Status.New#instance.label = New
+dd.lovs.Status.Uncompleted#instance.label = Uncompleted

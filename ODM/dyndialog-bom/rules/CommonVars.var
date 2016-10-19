@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>CommonVars</name>
+  <uuid>64f048bf-0efa-4b59-9175-e9028d327479</uuid>
+  <variables name="assessment" type="com.ibm.dd.q.Assessment" initialValue="" verbalization="the assessment"/>
+</ilog.rules.studio.model.base:VariableSet>

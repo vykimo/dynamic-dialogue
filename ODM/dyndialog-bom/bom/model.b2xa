@@ -1,0 +1,16 @@
+<b2x:translation xmlns:b2x="http://schemas.ilog.com/JRules/1.3/Translation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.ilog.com/JRules/1.3/Translation ilog/rules/schemas/1_3/b2x.xsd">
+    <id>e090fb02-aebb-49b7-80a5-07dff03dc32d</id>
+    <lang>ARL</lang>
+    <class>
+        <businessName>com.ibm.dd.q.Assessment</businessName>
+        <attribute>
+            <name>vstatus</name>
+            <getter language="arl"><![CDATA[
+            return this.status;
+            ]]></getter>
+            <setter language="arl"><![CDATA[
+            this.status=value;
+            ]]></setter>
+        </attribute>
+    </class>
+</b2x:translation>

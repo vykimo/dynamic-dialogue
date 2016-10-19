@@ -1,0 +1,22 @@
+
+property uuid "98837a9e-5b1a-40be-8df0-4edcd9bef0fa"
+package dd.lovs;
+
+
+public class Status
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "2"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "0"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "2"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "1"
+        property domainProviderResource "value_lists.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static DataCompleted, static New, static Uncompleted, static Investigation, static Completed}
+    public static final readonly dd.lovs.Status Completed;
+    public static final readonly dd.lovs.Status DataCompleted;
+    public static final readonly dd.lovs.Status Investigation;
+    public static final readonly dd.lovs.Status New;
+    public static final readonly dd.lovs.Status Uncompleted;
+}
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Variables</name>
+  <uuid>b17a8a07-e037-40f6-bc71-82886675d72c</uuid>
+  <variables name="question" type="com.ibm.dd.q.Question" initialValue="" verbalization="a question"/>
+  <variables name="today" type="java.util.Date" initialValue="new java.util.Date()" verbalization="today"/>
+</ilog.rules.studio.model.base:VariableSet>

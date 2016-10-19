@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Clean Question</name>
+  <uuid>7537e4fe-c251-4773-9548-d7dc7a4a561f</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+ the status of 'the assessment' is Completed 
+then 
+  stop all questions for 'the assessment' with final message: "Thank you for your inquery, hope we addressed your problem the most efficently possible.";]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

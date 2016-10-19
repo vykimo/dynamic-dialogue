@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Assess Data Needs</name>
+  <uuid>547065c0-358f-4ed6-9bb4-d0a23f59d22c</uuid>
+</ilog.rules.studio.model.base:RulePackage>

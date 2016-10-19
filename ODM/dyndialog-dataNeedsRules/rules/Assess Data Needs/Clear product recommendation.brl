@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Clear product recommendation</name>
+  <uuid>a76c2d8b-6b2e-4ee0-9b4d-3aae57d3f136</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+ the customer's profile of 'the assessment' is not null 
+ and 
+ there is at least one product in the owned products of the customer's profile of 'the assessment' 
+ and
+ "Load Product" is in the recommendations of 'the assessment' 
+then 
+  remove "Load Product" from the recommendations of 'the assessment' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,186 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/dyndialog-dataNeedsRules/dyndialog-model"
+property uuid "c9476090-3e6c-41f4-9b43-ef50dfbbba9c"
+package com.ibm.dd.common;
+
+
+public final class DateUtilities
+{
+    public DateUtilities();
+    public static java.util.Calendar addDays(java.util.Calendar arg1, int arg2);
+    public static java.util.Date addDays(java.util.Date arg1, int arg2);
+    public static java.util.Date addMonths(java.util.Date arg1, int arg2);
+    public static boolean after(java.util.Date arg1, java.util.Date arg2);
+    public static boolean after(javax.xml.datatype.XMLGregorianCalendar arg1, java.util.Date arg2);
+    public static boolean areEqual(java.util.Date arg1, java.util.Date arg2);
+    public static boolean before(java.util.Date arg1, java.util.Date arg2);
+    public static string dateToString(java.util.Date arg);
+    public static int getAge(java.util.Date arg1, java.util.Date arg2);
+    public static java.util.Date getDate(javax.xml.datatype.XMLGregorianCalendar arg);
+    public static int getDuration(java.util.Date arg1, java.util.Date arg2);
+    public static boolean isEqualToToday(java.util.Date arg);
+    public static java.util.Calendar makeCalendarDate(int arg1, int arg2, int arg3);
+    public static java.util.Calendar makeCalendarDate(int arg1, int arg2, int arg3, int arg4, int arg5);
+    public static java.util.Date makeDate(int arg1, int arg2, int arg3);
+    public static java.util.Date makeDate(int arg1, int arg2, int arg3, int arg4, int arg5);
+    public static long makeTime(int arg1, int arg2, int arg3, int arg4, int arg5);
+    public static javax.xml.datatype.XMLGregorianCalendar makeXmlDate(int arg1, int arg2, int arg3, int arg4, int arg5);
+    public static java.util.Date now();
+}
+
+package com.ibm.dd.ctx;
+
+
+public class CustomerContext
+{
+    public string customerID;
+    public java.util.HashMap derivedFacts;
+    public boolean deviceProtection;
+    public com.ibm.dd.ctx.Product impactedProduct
+                property update "true";
+    public java.util.Set ownedProducts domain 0,* class com.ibm.dd.ctx.Product;
+    public int vipPoints;
+    public CustomerContext();
+}
+
+public class Fact
+{
+    public double confidence;
+    public string name;
+    public string value;
+    public Fact(string arg1, double arg2);
+    public Fact();
+}
+
+public class Product
+{
+    public java.util.Date acquisitionDate;
+    public string brand;
+    public boolean eligibleForUpgrade;
+    public string name;
+    public string partNumber;
+    public string type;
+    public Product(string arg1, string arg2, string arg3, string arg4);
+    public Product();
+}
+
+package com.ibm.dd.q;
+
+
+public class Assessment
+{
+    public static final readonly string NEW;
+    public java.util.Date creationDate;
+    public com.ibm.dd.ctx.CustomerContext customerContext;
+    public string customerId;
+    public com.ibm.dd.q.CustomerQuery customerQuery;
+    public java.util.HashMap derivedFacts;
+    public com.ibm.dd.q.Response lastResponse;
+    public com.ibm.dd.q.Question nextQuestion;
+    public java.util.Set questions domain 0,* class com.ibm.dd.q.Question;
+    public java.util.Set recommendations domain 0,* class com.ibm.dd.q.Recommendation;
+    public java.util.Set responses domain 0,* class com.ibm.dd.q.Response;
+    public string status
+                property update "true";
+    public string topLevelMessage;
+    public string uid;
+    public dd.lovs.Status vstatus
+                property update "true";
+    public Assessment();
+    public void addFact(com.ibm.dd.ctx.Fact arg);
+    public void addFact(string arg1, string arg2, double arg3);
+    public void addQuestion(com.ibm.dd.q.Question arg);
+    public com.ibm.dd.q.Question addQuestion(string arg1, string arg2, string arg3);
+    public void addRecommendation(string arg1, double arg2, double arg3);
+    public com.ibm.dd.q.Question addSimpleQuestion(string arg1, string arg2);
+    public void addTask(string arg);
+    public void addTask(string arg1, double arg2);
+    public void answerNextQuestion(com.ibm.dd.q.Response arg);
+    public void answerNextQuestion(string arg);
+    public void defineSearch(string arg);
+    public com.ibm.dd.q.Response getResponseToQuestionId(string arg);
+    public boolean isRecommendationPresent(string arg);
+    public void referenceApp(string arg1, string arg2);
+    public void removeFact(com.ibm.dd.ctx.Fact arg);
+    public void removeRecommendation(string arg);
+    public void setResponseToQuestionId(string arg1, string arg2);
+    public void stopQuestion(string arg);
+}
+
+public class Category
+{
+    public readonly double confidence;
+    public readonly string name;
+    public Category(string arg);
+    public Category(string arg1, double arg2);
+    public Category();
+}
+
+public class CustomerQuery
+{
+    public string acceptedCategory;
+    public java.util.Set categories domain 0,* class com.ibm.dd.q.Category;
+    public string firstQueryContent;
+    public string userId;
+    public CustomerQuery(string arg);
+    public CustomerQuery();
+    public void addCategory(com.ibm.dd.q.Category arg);
+    public void addCategory(string arg);
+    public void addCategory(string arg1, double arg2);
+}
+
+public class Option
+{
+    public string name;
+    public boolean selected;
+    public Option(string arg);
+    public Option();
+    public string toString();
+}
+
+public class Question
+        extends java.lang.Comparable
+{
+    public string label;
+    public java.util.List options domain 0,* class com.ibm.dd.q.Option;
+    public string type;
+    public Question();
+    public void addOptionToQuestion(string arg1);
+    public int compareTo(object arg);
+    public boolean equals(object arg);
+    public void parseOptions(string arg);
+    public void parseOptionsAsCSV(string arg);
+    public string toString();
+}
+
+public class Recommendation
+{
+    public boolean accepted;
+    public double confidence;
+    public java.util.Date creationDate;
+    public string message;
+    public string type;
+    public string url;
+    public double weight;
+    public Recommendation(string arg1, string arg2, double arg3, double arg4);
+    public Recommendation(string arg1, string arg2, string arg3, double arg4, double arg5);
+    public Recommendation();
+    public static com.ibm.dd.q.Recommendation buildAppReference(string arg1, string arg2);
+    public static com.ibm.dd.q.Recommendation buildRecommendation(string arg1, double arg2, double arg3);
+    public static com.ibm.dd.q.Recommendation buildSearch(string arg);
+    public static com.ibm.dd.q.Recommendation buildTask(string arg1, double arg2);
+    public boolean equals(object arg);
+    public int hashCode();
+    public string toString();
+}
+
+public class Response
+{
+    public string id;
+    public string questionLabel;
+    public readonly int responseNumericValue;
+    public string value;
+    public Response();
+}
+

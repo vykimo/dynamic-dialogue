@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="AssessDataNeeds" usingRuleflow="true" ruleflowName="AssessDataNeeds-Flow" targetRuleProjectName="dyndialog-dataNeedsRules">
+  <name>AssessDataNeeds</name>
+  <uuid>af46fd6c-7bd2-42c9-9888-1a6acf4e3e81</uuid>
+  <referencedVariables variableName="assessment" variableSetName="CommonVars" direction="IN_OUT">
+    <variableSet href="../../dyndialog-bom/rules/CommonVars.var#64f048bf-0efa-4b59-9175-e9028d327479"/>
+  </referencedVariables>
+  <ruleflow href="../rules/AssessDataNeeds-Flow.rfl#e6dff82c-40a0-41ed-be53-5118971154fd"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="AssessDataNeeds_extractor" validator="Default Validator"/>
+  <targetRuleProject href="../../dyndialog-dataNeedsRules#08a494d7-1069-409b-929a-18471606ebc6"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

@@ -1,0 +1,144 @@
+# Vocabulary Properties
+com.ibm.dd.q.Assessment.isRecommendationPresent(java.lang.String,java.util.Set)#phrase.navigation = {this}.isRecommendationPresent({0}, {1})
+uuid = 9f9cb10f-4f93-43d3-9b9c-a9449727a3f8
+
+# com.ibm.dd.common.DateUtilities
+com.ibm.dd.common.DateUtilities#concept.label = date utilities
+com.ibm.dd.common.DateUtilities.addDays(java.util.Date,int)#phrase.navigation = {0}  {1} days
+
+# com.ibm.dd.ctx.CustomerContext
+com.ibm.dd.ctx.CustomerContext#concept.label = customer context
+com.ibm.dd.ctx.CustomerContext.customerID#phrase.action = set the customer ID of {this} to {customer ID}
+com.ibm.dd.ctx.CustomerContext.customerID#phrase.navigation = {customer ID} of {this}
+com.ibm.dd.ctx.CustomerContext.derivedFacts#phrase.action = set the derived facts of {this} to {derived facts}
+com.ibm.dd.ctx.CustomerContext.derivedFacts#phrase.navigation = {derived facts} of {this}
+com.ibm.dd.ctx.CustomerContext.deviceProtection#phrase.action = make it {device protection} that {this} is device protection
+com.ibm.dd.ctx.CustomerContext.deviceProtection#phrase.navigation = {this} is device protected
+com.ibm.dd.ctx.CustomerContext.impactedProduct#phrase.action = set the impacted product of {this} to {impacted product}
+com.ibm.dd.ctx.CustomerContext.impactedProduct#phrase.navigation = {impacted product} of {this}
+com.ibm.dd.ctx.CustomerContext.ownedProducts#phrase.action = set the owned products of {this} to {owned product}
+com.ibm.dd.ctx.CustomerContext.ownedProducts#phrase.navigation = {owned product} of {this}
+com.ibm.dd.ctx.CustomerContext.vipPoints#phrase.action = set the vip points of {this} to {vip points}
+com.ibm.dd.ctx.CustomerContext.vipPoints#phrase.navigation = {vip points} of {this}
+
+# com.ibm.dd.ctx.Fact
+com.ibm.dd.ctx.Fact#concept.label = fact
+com.ibm.dd.ctx.Fact.confidence#phrase.action = set the confidence of {this} to {confidence}
+com.ibm.dd.ctx.Fact.confidence#phrase.navigation = {confidence} of {this}
+com.ibm.dd.ctx.Fact.name#phrase.action = set the name of {this} to {name}
+com.ibm.dd.ctx.Fact.name#phrase.navigation = {name} of {this}
+com.ibm.dd.ctx.Fact.value#phrase.action = set the value of {this} to {value}
+com.ibm.dd.ctx.Fact.value#phrase.navigation = {value} of {this}
+
+# com.ibm.dd.ctx.Product
+com.ibm.dd.ctx.Product#concept.label = product
+com.ibm.dd.ctx.Product.acquisitionDate#phrase.action = set the acquisition date of {this} to {acquisition date}
+com.ibm.dd.ctx.Product.acquisitionDate#phrase.navigation = {acquisition date} of {this}
+com.ibm.dd.ctx.Product.brand#phrase.action = set the brand of {this} to {brand}
+com.ibm.dd.ctx.Product.brand#phrase.navigation = {brand} of {this}
+com.ibm.dd.ctx.Product.eligibleForUpgrade#phrase.action = make it {eligible for upgrade} that {this} is eligible for upgrade
+com.ibm.dd.ctx.Product.eligibleForUpgrade#phrase.navigation = {this} is eligible for upgrade
+com.ibm.dd.ctx.Product.name#phrase.action = set the name of {this} to {name}
+com.ibm.dd.ctx.Product.name#phrase.navigation = {name} of {this}
+com.ibm.dd.ctx.Product.partNumber#phrase.action = set the part number of {this} to {part number}
+com.ibm.dd.ctx.Product.partNumber#phrase.navigation = {part number} of {this}
+com.ibm.dd.ctx.Product.type#phrase.action = set the type of {this} to {type}
+com.ibm.dd.ctx.Product.type#phrase.navigation = {type} of {this}
+
+# com.ibm.dd.q.Assessment
+com.ibm.dd.q.Assessment#concept.label = assessment
+com.ibm.dd.q.Assessment.addQuestion(java.lang.String,java.lang.String,java.lang.String)#phrase.navigation = a new question with label: {0} of type: {1} and options: {2} and add it to {this}
+com.ibm.dd.q.Assessment.addRecommendation(java.lang.String,double,double)#phrase.action = add recommendation: {0} with a weigth of {1}, a confidence {2} to {this}
+com.ibm.dd.q.Assessment.addSimpleQuestion(java.lang.String,java.lang.String)#phrase.navigation = to new simple question with label: {0}, type: {1} and add it to {this}
+com.ibm.dd.q.Assessment.addTask(java.lang.String)#phrase.action = add  task: {0} to {this}
+com.ibm.dd.q.Assessment.addTask(java.lang.String,double)#phrase.action = add task: {0} with a weigth: {1} to {this}
+com.ibm.dd.q.Assessment.creationDate#phrase.action = set the creation date of {this} to {creation date}
+com.ibm.dd.q.Assessment.creationDate#phrase.navigation = {creation date} of {this}
+com.ibm.dd.q.Assessment.customerContext#phrase.action = set the customer context of {this} to {customer's profile}
+com.ibm.dd.q.Assessment.customerContext#phrase.navigation = {customer's profile} of {this}
+com.ibm.dd.q.Assessment.customerId#phrase.action = set the customer id of {this} to {customer id}
+com.ibm.dd.q.Assessment.customerId#phrase.navigation = {customer id} of {this}
+com.ibm.dd.q.Assessment.customerQuery#phrase.action = set the customer query of {this} to {customer query}
+com.ibm.dd.q.Assessment.customerQuery#phrase.clearer = clear the customer query of {this}
+com.ibm.dd.q.Assessment.customerQuery#phrase.navigation = {customer query} of {this}
+com.ibm.dd.q.Assessment.defineSearch(java.lang.String)#phrase.action = add perform search with criteria: {0} to {this}
+com.ibm.dd.q.Assessment.derivedFacts#phrase.action = set the derived facts of {this} to {derived facts}
+com.ibm.dd.q.Assessment.derivedFacts#phrase.navigation = {derived facts} of {this}
+com.ibm.dd.q.Assessment.isRecommendationPresent(java.lang.String)#phrase.navigation = {0} is in the recommendations of {this}
+com.ibm.dd.q.Assessment.lastResponse#phrase.action = set the last response of {this} to {last response}
+com.ibm.dd.q.Assessment.lastResponse#phrase.navigation = {last response} of {this}
+com.ibm.dd.q.Assessment.nextQuestion#phrase.action = set the next question of {this} to {next question}
+com.ibm.dd.q.Assessment.nextQuestion#phrase.clearer = clear the next question of {this}
+com.ibm.dd.q.Assessment.nextQuestion#phrase.navigation = {next question} of {this}
+com.ibm.dd.q.Assessment.questions#phrase.action = set the questions of {this} to {question}
+com.ibm.dd.q.Assessment.questions#phrase.navigation = {question} of {this}
+com.ibm.dd.q.Assessment.recommendations#phrase.action = set the recommendations of {this} to {recommendation}
+com.ibm.dd.q.Assessment.recommendations#phrase.navigation = {recommendation} of {this}
+com.ibm.dd.q.Assessment.referenceApp(java.lang.String,java.lang.String)#phrase.action = Add reference to application {0} at URL: {1} to {this}
+com.ibm.dd.q.Assessment.removeRecommendation(java.lang.String)#phrase.action = remove {0} from the recommendations of {this}
+com.ibm.dd.q.Assessment.responses#phrase.action = set the responses of {this} to {response}
+com.ibm.dd.q.Assessment.responses#phrase.navigation = {response} of {this}
+com.ibm.dd.q.Assessment.stopQuestion(java.lang.String)#phrase.action = stop all questions for {this} with final message: {0}
+com.ibm.dd.q.Assessment.topLevelMessage#phrase.action = set the top level message of {this} to {top level message}
+com.ibm.dd.q.Assessment.topLevelMessage#phrase.navigation = {top level message} of {this}
+com.ibm.dd.q.Assessment.uid#phrase.action = set the uid of {this} to {uid}
+com.ibm.dd.q.Assessment.uid#phrase.navigation = {uid} of {this}
+com.ibm.dd.q.Assessment.vstatus#phrase.action = set the status of {this} to {status}
+com.ibm.dd.q.Assessment.vstatus#phrase.clearer = clear the status of {this}
+com.ibm.dd.q.Assessment.vstatus#phrase.navigation = {status} of {this}
+
+# com.ibm.dd.q.Category
+com.ibm.dd.q.Category#concept.label = category
+com.ibm.dd.q.Category.confidence#phrase.navigation = {confidence} of {this}
+com.ibm.dd.q.Category.name#phrase.navigation = {name} of {this}
+
+# com.ibm.dd.q.CustomerQuery
+com.ibm.dd.q.CustomerQuery#concept.label = customer query
+com.ibm.dd.q.CustomerQuery.acceptedCategory#phrase.action = set the accepted category of {this} to {derived category}
+com.ibm.dd.q.CustomerQuery.acceptedCategory#phrase.navigation = {derived category} of {this}
+com.ibm.dd.q.CustomerQuery.categories#phrase.action = set the categories of {this} to {category}
+com.ibm.dd.q.CustomerQuery.categories#phrase.navigation = {category} of {this}
+
+# com.ibm.dd.q.Option
+com.ibm.dd.q.Option#concept.label = option
+com.ibm.dd.q.Option.name#phrase.action = set the name of {this} to {name}
+com.ibm.dd.q.Option.name#phrase.navigation = {name} of {this}
+com.ibm.dd.q.Option.selected#phrase.action = make it {selected} that {this} is selected
+com.ibm.dd.q.Option.selected#phrase.navigation = {this} is selected
+
+# com.ibm.dd.q.Question
+com.ibm.dd.q.Question#concept.label = question
+com.ibm.dd.q.Question.addOptionToQuestion(java.lang.String)#phrase.action = add {0} as option to {this}
+com.ibm.dd.q.Question.label#phrase.action = set the label of {this} to {label}
+com.ibm.dd.q.Question.label#phrase.navigation = {label} of {this}
+com.ibm.dd.q.Question.options#phrase.action = set the options of {this} to {option}
+com.ibm.dd.q.Question.options#phrase.navigation = {option} of {this}
+com.ibm.dd.q.Question.type#phrase.action = set the type of {this} to {type}
+com.ibm.dd.q.Question.type#phrase.navigation = {type} of {this}
+
+# com.ibm.dd.q.Recommendation
+com.ibm.dd.q.Recommendation#concept.label = recommendation
+com.ibm.dd.q.Recommendation.accepted#phrase.action = make it {accepted} that {this} is accepted
+com.ibm.dd.q.Recommendation.accepted#phrase.navigation = {this} is accepted
+com.ibm.dd.q.Recommendation.confidence#phrase.action = set the confidence of {this} to {confidence}
+com.ibm.dd.q.Recommendation.confidence#phrase.navigation = {confidence} of {this}
+com.ibm.dd.q.Recommendation.creationDate#phrase.action = set the creation date of {this} to {creation date}
+com.ibm.dd.q.Recommendation.creationDate#phrase.navigation = {creation date} of {this}
+com.ibm.dd.q.Recommendation.message#phrase.action = set the message of {this} to {message}
+com.ibm.dd.q.Recommendation.message#phrase.navigation = {message} of {this}
+com.ibm.dd.q.Recommendation.type#phrase.action = set the type of {this} to {type}
+com.ibm.dd.q.Recommendation.type#phrase.navigation = {type} of {this}
+com.ibm.dd.q.Recommendation.url#phrase.action = set the url of {this} to {url}
+com.ibm.dd.q.Recommendation.url#phrase.navigation = {url} of {this}
+com.ibm.dd.q.Recommendation.weight#phrase.action = set the weight of {this} to {weight}
+com.ibm.dd.q.Recommendation.weight#phrase.navigation = {weight} of {this}
+
+# com.ibm.dd.q.Response
+com.ibm.dd.q.Response#concept.label = response
+com.ibm.dd.q.Response.id#phrase.action = set the id of {this} to {id}
+com.ibm.dd.q.Response.id#phrase.navigation = {id} of {this}
+com.ibm.dd.q.Response.questionLabel#phrase.action = set the question label of {this} to {question label}
+com.ibm.dd.q.Response.questionLabel#phrase.navigation = {question label} of {this}
+com.ibm.dd.q.Response.responseNumericValue#phrase.navigation = {response numeric value} of {this}
+com.ibm.dd.q.Response.value#phrase.action = set the value of {this} to {value}
+com.ibm.dd.q.Response.value#phrase.navigation = {value} of {this}

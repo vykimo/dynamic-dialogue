@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Clear customer context recommendation</name>
+  <uuid>4ebcfce7-c49d-4cae-922b-c8eaaaeef800</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+ the customer's profile of 'the assessment' is not null 
+ and
+ "Load Customer Context" is in the recommendations of 'the assessment' 
+then 
+  remove "Load Customer Context" from the recommendations of 'the assessment' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

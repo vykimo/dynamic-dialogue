@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="." default="build" name="dyndialog-model">
+	<property name="basedir" value="."/>
+	<property name="jarname" value= "${ant.project.name}.jar"/>
+	<property name="bin.dir" value="${basedir}/bin"/>
+	<property name="src.dir" value="${basedir}/src"/>
+	
+	<path id="classpathDir">
+	        <pathelement location="${bin.dir}"/>
+	</path>
+	<target name="init">
+        <mkdir dir="${bin.dir}"/>
+    </target>
+    
+	<target name="clean">
+        <delete dir="${bin.dir}"/>
+		<delete file="${basedir}/${jarname}" />		
+    </target>
+    
+	<target name="build" depends="clean,init,compile,build-jar"/>
+	
+	<target name="compile">
+	   <javac debug="true"  destdir="${bin.dir}" includeantruntime="false">
+	            <src path="${src.dir}"/>
+	            <classpath refid="classpathDir"/>
+	   </javac>
+	 </target>
+		
+	<target name="build-jar">
+		<jar destfile="${basedir}/${jarname}">
+  			<fileset dir="${bin.dir}">
+  			   <include name="**/*.class"/>
+  			   <exclude name="test/*.class"/>
+  		 	</fileset>
+  		</jar>	
+  		<tstamp>
+  		  <format property="now" pattern="MM/dd/yyyy hh:mm aa" /> 
+  		</tstamp>
+  		<echo message="Created jar ${jarname} at: ${now}" /> 
+	</target>
+</project>
