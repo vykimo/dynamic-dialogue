@@ -16,17 +16,16 @@ after signing up for Bluemix. You will attach the **IBM Watson™ Natural Langua
 **Retrieve and Rank** services to the application as well as learn to begin using these services.
 
 ## What Does the App Do?
-**TODO JEROME/HANS EXPLAIN APP**
+**TODO** JEROME/HANS EXPLAIN APP
 
-## Sign up for / Log into Bluemix and DevOps
-
-Sign up for Bluemix at https://console.ng.bluemix.net and DevOps Services at https://hub.jazz.net.
-When you sign up, you'll create an IBM ID, create an alias, and register with Bluemix.
-
-
+## Deploying the application
 The application can be deployed in two ways:
-Single click deploy via DevOps Services
-Manual push through Cloud Foundry command line client
+
+- Single click deploy via DevOps Services
+- Manual push through Cloud Foundry command line client
+
+
+You will need an account on Bluemix. If you are not already signed up, you can sign up on [https://www.bluemix.net](https://www.bluemix.net)
 
 
 ## Single click deploy via DevOps Services
@@ -46,7 +45,6 @@ follow the [instructions here](https://github.com/cloudfoundry/cli)
 
 A reference guide can be found [here](https://new-console.ng.bluemix.net/docs/cli/reference/cfcommands/index.html)
 
-**TODO** update the link above to list out the api endpoints for each region
 
 
 1. Download the application code
