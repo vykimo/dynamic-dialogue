@@ -1,7 +1,7 @@
 # Workload - Context Driven Dialog
 
 
-###Scalable Web Application Example Implemented in Cloud Foundry
+###Context driven dynamic dialog example implemented in Cloud Foundry
 
 This application demonstrates how to combine **IBM Watson™ Natural Language Classifier** and **Retrieve and Rank** with a rule-based system to offer a context driven conversation solution, full flexibility in terms of code change, empowering the business user to change the conversation flow and recommendations. To learn basic concepts, see [Cognitive concepts 101](https://developer.ibm.com/cloudarchitecture/docs/cognitive-concepts-101/).
 
@@ -16,7 +16,7 @@ after signing up for Bluemix. You will attach the **IBM Watson™ Natural Langua
 **Retrieve and Rank** services to the application as well as learn to begin using these services.
 
 ## What Does the App Do?
-**TODO JEROME EXPLAIN APP**
+**TODO JEROME/HANS EXPLAIN APP**
 
 ## Sign up for / Log into Bluemix and DevOps
 
@@ -30,9 +30,6 @@ Manual push through Cloud Foundry command line client
 
 
 ## Single click deploy via DevOps Services
-https://new-console.ng.bluemix.net/docs/develop/deploy_button.html
-
-**TODO CREATE BUTTON**
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/hassenius/dynamic-dialogue)
 
@@ -75,4 +72,5 @@ A reference guide can be found [here](https://new-console.ng.bluemix.net/docs/cl
     
 
 
-
+**TODO**
+Deside if ODM files should be included here, if so add explanations. If not find a new home for them, and maybe mention/link from here.
