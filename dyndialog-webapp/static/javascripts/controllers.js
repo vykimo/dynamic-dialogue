@@ -31,7 +31,6 @@ app.config(['$routeProvider',
  * - query entry form and ask button
  */
 theCtrls.controller('HomeCtrl',  ['$scope','$location','ddService','$http','$sce',
-      // Call query
       function ($scope,$location,ddService,$http,$sce) {		
 			if ($scope.introduction === undefined){
 				$http.get("data/intro.json").then(function(response) {
@@ -40,8 +39,9 @@ theCtrls.controller('HomeCtrl',  ['$scope','$location','ddService','$http','$sce
 		    	  return [];
 		      });
 			}
-			$scope.title="Dynamic Context Driven Dialog";
+			$scope.title="Context Driven Dialog";
 	
+			// when user pushes query button
 			$scope.helpMe = function(query) {
 				 var cq={}
 				 cq.userId="bob";
