@@ -12,16 +12,24 @@ class RuleServiceClient(object):
 		self.pwd=credentials['credentials']['password']
 		self.url=credentials['credentials']['url']
 		self.dataNeedRuleSet=credentials['credentials']['dataNeedRuleSet']
+		self.dialogRuleSet=credentials['credentials']['dialogRuleSet']
 
 		
 	def assessDataNeed(self,assessment):
+		print(assessment)
 		response=requests.post(self.url+"/"+self.dataNeedRuleSet,
 	  			    json.dumps(assessment),
 	                auth=(self.user, self.pwd),
                     headers={'Content-Type': 'application/json'})
 		return response.text
 		
-
+	def processQuestion(self,assessment):
+		print(assessment)
+		response=requests.post(self.url+"/"+self.dataNeedRuleSet,
+	  			    json.dumps(assessment),
+	                auth=(self.user, self.pwd),
+                    headers={'Content-Type': 'application/json'})
+		return response.text
                       
 if __name__ =='__main__':
 	a={'assessment': {'uid': 'string', 'customerQuery': {'firstQueryContent': 'my battery is draining', 'userId': 'bob',

@@ -10,12 +10,12 @@ if os.environ.get('VCAP_SERVICES'):
     services = json.loads(os.environ.get('VCAP_SERVICES'))
     nlc_user = str(services['natural_language_classifier'][0]['credentials']['username'])
     nlc_pwd = str(services['natural_language_classifier'][0]['credentials']['password'])
+    classifierId=str(services['natural_language_classifier'][0]['credentials']['classifierId'])
 else:
-    f=open('./nlc-credentials.json','r')
+    f=open('../data/nlc-credentials.json','r')
     credentials=json.load(f)
     nlc_user=credentials['credentials']['username']
     nlc_pwd=credentials['credentials']['password']
-    url=credentials['credentials']['url']
     classifierId=credentials['credentials']['classifierId']
     f.close()
     print(classifierId)
@@ -40,7 +40,7 @@ def buildAssessment():
 	assessment['creationDate']=d.strftime("%d/%m/%y")
 	return assessment
 	
-# Process the first user query: The payload is a query json object
+# Process the first user query: The payload is a user query json object
 @app.route("/dd/api/a/classify",methods=['POST'])
 def classifyFirstUserQuery():
 	userQuery=request.get_json()
@@ -57,7 +57,11 @@ def classifyFirstUserQuery():
 	print(aOut)
 	return jsonify(aOut);
 
-    	
+@app.route("/dd/api/a",methods=['POST'])
+def dialog():
+ 	print(request.get_json())
+ 	pass
+ 	   	
 if __name__ == "__main__":
 	print("Server v0.0.1")
 	app.run(host='0.0.0.0', port=port)
