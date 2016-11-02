@@ -52,8 +52,9 @@ theCtrls.controller('HomeCtrl',  ['$scope','$location','ddService','$http','$sce
 						data: cq,
 						headers: {'Content-Type': 'application/json'}	
 				 }).then(function(response){
-					        ddService.setAssessment(response.data);
+					        
 					        assessment=response.data;
+					        ddService.setAssessment(assessment);
 					 		 $location.path('/dialog');
 				  		},function(error) {
 							alert("Query failed.");
@@ -65,7 +66,8 @@ theCtrls.controller('HomeCtrl',  ['$scope','$location','ddService','$http','$sce
 theCtrls.controller('DialogCtrl',  ['$scope','$location','ddService','$http',
     function ($scope,$location,ddService,$http) {
        		$scope.title="Assessing...";
-       		$scope.question=assessment.nextQuestion;
+       		$scope.assessment=ddService.getAssessment()
+       		$scope.question=$scope.assessment.nextQuestion;
        		$scope.showButton=true;
        		$scope.response={};
     	 	if ($scope.question){
@@ -74,22 +76,21 @@ theCtrls.controller('DialogCtrl',  ['$scope','$location','ddService','$http',
     	 	$scope.recommendations=[]
     	 	
     	 	$scope.assess = function(r) {
-    	    	var a=assessment;
-    	    	a.lastResponse=r;
-    	    	a.nextQuestion={}
+    	    	$scope.assessment.lastResponse=r;
+    	    	$scope.assessment.nextQuestion={}
     	    	$http({
     			    method:'POST',
     				url:'/dd/api/a',
-    				data: a,
+    				data: $scope.assessment,
     				headers: {'Content-Type': 'application/json'}	
     	    	}).then(function(response){
-    			 		assessment=response.data;
+    	    			$scope.assessment=response.data;
     			 		$scope.response={};
     			 		//$location.path('/dialog');
-    			 		$scope.question=assessment.nextQuestion;
+    			 		$scope.question=$scope.assessment.nextQuestion;
     		       		$scope.response.questionLabel=$scope.question.label;
-    			 		if (assessment.status === "Completed") {
-    			 			$scope.recommendations=assessment.recommendations;	
+    			 		if ($scope.assessment.status === "Completed") {
+    			 			$scope.recommendations=$scope.assessment.recommendations;	
     			 			$scope.question.type="text";
     			 			$scope.showButton=false;
     			 		}
@@ -98,7 +99,7 @@ theCtrls.controller('DialogCtrl',  ['$scope','$location','ddService','$http',
     					alert("Query failed.");
     				}); 
     	    }
-          } // constructorß                       
+          } // constructor                  
 ]);
 	
 

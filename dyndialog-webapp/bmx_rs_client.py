@@ -16,26 +16,22 @@ class RuleServiceClient(object):
 
 		
 	def assessDataNeed(self,assessment):
-		print(assessment)
-		response=requests.post(self.url+"/"+self.dataNeedRuleSet,
-	  			    json.dumps(assessment),
-	                auth=(self.user, self.pwd),
-                    headers={'Content-Type': 'application/json'})
-		return response.text
+                request={'assessment':assessment}
+                response=requests.post(self.url+"/"+self.dataNeedRuleSet,json.dumps(request), auth=(self.user, self.pwd),headers={'Content-Type': 'application/json'})
+                aOut=json.loads(response.text)
+                return aOut['assessment']
 		
 	def processQuestion(self,assessment):
-		print(assessment)
-		response=requests.post(self.url+"/"+self.dataNeedRuleSet,
-	  			    json.dumps(assessment),
-	                auth=(self.user, self.pwd),
-                    headers={'Content-Type': 'application/json'})
-		return response.text
+                request={'assessment':assessment}
+                response=requests.post(self.url+"/"+self.dialogRuleSet,json.dumps(request),auth=(self.user, self.pwd),headers={'Content-Type': 'application/json'})
+                aOut=json.loads(response.text)
+                return aOut['assessment']
                       
 if __name__ =='__main__':
-	a={'assessment': {'uid': 'string', 'customerQuery': {'firstQueryContent': 'my battery is draining', 'userId': 'bob',
+	a={'uid': 'string', 'customerQuery': {'firstQueryContent': 'my battery is draining', 'userId': 'bob',
 		'acceptedCategory': 'battery'},
 	    'status': 'NEW',
-	    'creationDate': '2008-09-29T01:49:45.000+0000'
-	    }}
+	    'creationDate': '2016-09-29T01:49:45.000+0000'
+	    }
 	rs=RuleServiceClient();
 	print(rs.assessDataNeed(a))

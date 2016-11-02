@@ -33,13 +33,16 @@ nlc= NLClassifier(nlc_user,nlc_pwd,classifierId)
 def root():
   return app.send_static_file('home.html')
 
-
+# TODO this is a scafolding code
 def buildAssessment():
-	assessment={'status':'NEW'}
+	assessment={'uid': 'string','status':'New','customerId':'Bill'}
 	d=date.today()
-	assessment['creationDate']=d.strftime("%d/%m/%y")
+	assessment['creationDate']=d.isoformat()
 	return assessment
-	
+
+def assessClasse():
+    pass
+    
 # Process the first user query: The payload is a user query json object
 @app.route("/dd/api/a/classify",methods=['POST'])
 def classifyFirstUserQuery():
@@ -54,14 +57,15 @@ def classifyFirstUserQuery():
 	else:
 		#TODO add logic for processing other classes
 		aOut=assessment
-	print(aOut)
 	return jsonify(aOut);
 
 @app.route("/dd/api/a",methods=['POST'])
 def dialog():
- 	print(request.get_json())
- 	pass
+        assessment=request.get_json()
+        print(assessment)
+        aOut=BatteryProcessing.execute(assessment)
+        return jsonify(aOut);
  	   	
 if __name__ == "__main__":
-	print("Server v0.0.1")
+	print("Server v0.0.3 10/31")
 	app.run(host='0.0.0.0', port=port)
