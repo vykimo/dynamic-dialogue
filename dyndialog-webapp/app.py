@@ -34,7 +34,7 @@ def root():
   return app.send_static_file('home.html')
 
 # TODO this is a scafolding code
-def buildAssessment():
+def buildAssessment(userid):
 	assessment={'uid': 'string','status':'New','customerId':'Bill'}
 	d=date.today()
 	assessment['creationDate']=d.isoformat()

@@ -5,9 +5,7 @@ This module supports the logic to process a battery conversation
 from bmx_rs_client import RuleServiceClient
 from crm_client import CRM
 import json
-'''
-   Main entry point to process the logic flow of the Battery Conversation
-'''
+
 rs=RuleServiceClient()
 def assessDataNeed(assessment):
         a=rs.assessDataNeed(assessment)
@@ -28,6 +26,9 @@ def assessDataNeed(assessment):
                         end=True
         return a
 
+'''
+   Main entry point to process the logic flow of the Battery Conversation
+'''
 def execute(assessment):
         # First assess what data to load
         if assessment['status'] == 'New':
