@@ -6,7 +6,7 @@
   <definition><![CDATA[definitions
   set 'the impacted device' to a product;
 if
- the type of 'the impacted device' is one of { "Tablet" , "Phone" }
+ the type of 'the impacted device' is one of { "Tablet" , "SmartPhone","Phone" }
  and
  there is no response in the responses of 'the assessment' 
  where the question label of this response contains "related to physical damage",

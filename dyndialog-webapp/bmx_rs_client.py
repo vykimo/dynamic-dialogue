@@ -13,18 +13,27 @@ class RuleServiceClient(object):
 		self.url=credentials['credentials']['url']
 		self.dataNeedRuleSet=credentials['credentials']['dataNeedRuleSet']
 		self.dialogRuleSet=credentials['credentials']['dialogRuleSet']
-
+		print("Will call rulesets: "+self.dataNeedRuleSet+" and "+self.dialogRuleSet)
+		f.close()                
 		
 	def assessDataNeed(self,assessment):
-                request={'assessment':assessment}
-                response=requests.post(self.url+"/"+self.dataNeedRuleSet,json.dumps(request), auth=(self.user, self.pwd),headers={'Content-Type': 'application/json'})
+                request={}
+                request['assessment']=assessment
+                reqStr=json.dumps(request)
+                print("Request>>"+reqStr)
+                response=requests.post(self.url+"/"+self.dataNeedRuleSet,reqStr, auth=(self.user, self.pwd),headers={'Content-Type': 'application/json'})
                 aOut=json.loads(response.text)
+                print(aOut)
                 return aOut['assessment']
 		
 	def processQuestion(self,assessment):
-                request={'assessment':assessment}
-                response=requests.post(self.url+"/"+self.dialogRuleSet,json.dumps(request),auth=(self.user, self.pwd),headers={'Content-Type': 'application/json'})
+                request={}
+                request['assessment']=assessment
+                reqStr=json.dumps(request)
+                print("Request>>"+reqStr)
+                response=requests.post(self.url+"/"+self.dialogRuleSet,reqStr,auth=(self.user, self.pwd),headers={'Content-Type': 'application/json'})
                 aOut=json.loads(response.text)
+                print(aOut)
                 return aOut['assessment']
                       
 if __name__ =='__main__':

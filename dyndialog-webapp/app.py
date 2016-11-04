@@ -52,7 +52,8 @@ def root():
 
 # TODO this is a scafolding code
 def buildAssessment(userid):
-	assessment={'uid': 'string','status':'New','customerId':'Bill'}
+	assessment={'uid': 'string','status':'New'}
+	assessment['customerId']=userid
 	d=date.today()
 	assessment['creationDate']=d.isoformat()
 	return assessment
@@ -82,6 +83,8 @@ API to support the question and answer interaction
 @app.route("/dd/api/a",methods=['POST'])
 def dialog():
         assessment=request.get_json()
+        if (assessment['lastResponse']):
+            assessment['responses'].append(assessment['lastResponse'])
         if (assessment['customerQuery']['acceptedCategory'] == 'battery'):
             aOut=BatteryProcessing.execute(assessment)
             return jsonify(aOut)
