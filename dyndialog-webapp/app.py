@@ -1,8 +1,25 @@
+'''
+Python Web App using Flask to offer a set of RESTful apis so the angularjs
+client can get the dialog running.
+
+The end user enters a query like: my battery is not holding charge
+The UI will use a POST request to /dd/api/a/classify with a query json
+that may look like:
+{'firstQueryContent': "my battery is not holding charge",
+'
+
+
+This example is based on battery issue reporting.
+
+10/2016 Jerome Boyer - IBM -  boyerje@us.ibm.com
+
+'''
 import os, json, requests
 from flask import Flask,request,jsonify
 from datetime import date
+# Business logic is separated in its own module
 import BatteryProcessing
-
+# Watson Natural Language Classifier wrapper
 from  NLCclient import NLClassifier
 
 # When deploying to Bluemix Watson Service Credentials of bound services are available in VCAP_SERVICES
@@ -50,21 +67,26 @@ def classifyFirstUserQuery():
 	aQuery=userQuery['firstQueryContent']
 	categories=nlc.classify(aQuery)
 	userQuery['acceptedCategory']=categories['top_class']
-	assessment=buildAssessment()
+	assessment=buildAssessment("Bill")
 	assessment['customerQuery']=userQuery
 	if (userQuery['acceptedCategory'] == 'battery'):
 		aOut=BatteryProcessing.execute(assessment)
 	else:
 		#TODO add logic for processing other classes
 		aOut=assessment
-	return jsonify(aOut);
+	return jsonify(aOut)
 
+'''
+API to support the question and answer interaction
+'''
 @app.route("/dd/api/a",methods=['POST'])
 def dialog():
         assessment=request.get_json()
-        print(assessment)
-        aOut=BatteryProcessing.execute(assessment)
-        return jsonify(aOut);
+        if (assessment['customerQuery']['acceptedCategory'] == 'battery'):
+            aOut=BatteryProcessing.execute(assessment)
+            return jsonify(aOut)
+        else:
+            return jsonify({"error":"Logic not implemented"})
  	   	
 if __name__ == "__main__":
 	print("Server v0.0.3 10/31")

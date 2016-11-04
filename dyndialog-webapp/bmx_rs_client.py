@@ -6,7 +6,7 @@ import os,requests,json
 class RuleServiceClient(object):
 
 	def __init__(self):
-		f=open('./bmx-rs-credentials.json','r')
+		f=open('../data/bmx-rs-credentials.json','r')
 		credentials=json.load(f)
 		self.user=credentials['credentials']['username']
 		self.pwd=credentials['credentials']['password']

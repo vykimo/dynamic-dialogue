@@ -27,6 +27,7 @@ public final class DateUtilities
     public static long makeTime(int arg1, int arg2, int arg3, int arg4, int arg5);
     public static javax.xml.datatype.XMLGregorianCalendar makeXmlDate(int arg1, int arg2, int arg3, int arg4, int arg5);
     public static java.util.Date now();
+    public static boolean withinYear(java.util.Date arg);
 }
 
 package com.ibm.dd.ctx;
@@ -36,7 +37,6 @@ public class CustomerContext
 {
     public string customerID;
     public java.util.HashMap derivedFacts;
-    public boolean deviceProtection;
     public com.ibm.dd.ctx.Product impactedProduct
                 property update "true";
     public java.util.Set ownedProducts domain 0,* class com.ibm.dd.ctx.Product;
@@ -54,15 +54,18 @@ public class Fact
 }
 
 public class Product
+        extends java.lang.Comparable
 {
     public java.util.Date acquisitionDate;
     public string brand;
+    public boolean deviceProtection;
     public boolean eligibleForUpgrade;
     public string name;
     public string partNumber;
     public string type;
     public Product(string arg1, string arg2, string arg3, string arg4);
     public Product();
+    public int compareTo(com.ibm.dd.ctx.Product arg);
 }
 
 package com.ibm.dd.q;
@@ -93,7 +96,9 @@ public class Assessment
     public void addQuestion(com.ibm.dd.q.Question arg);
     public com.ibm.dd.q.Question addQuestion(string arg1, string arg2, string arg3);
     public void addRecommendation(string arg1, double arg2, double arg3);
+    public void addSetNextQuestion(string arg1, string arg2, string arg3);
     public com.ibm.dd.q.Question addSimpleQuestion(string arg1, string arg2);
+    public void addSimpleSetNextQuestion(string arg1, string arg2);
     public void addTask(string arg);
     public void addTask(string arg1, double arg2);
     public void answerNextQuestion(com.ibm.dd.q.Response arg);

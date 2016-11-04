@@ -7,6 +7,11 @@ from crm_client import CRM
 import json
 
 rs=RuleServiceClient()
+
+'''
+Use first ruleset in ODM to assess the data quality and as
+potential outcome 
+'''
 def assessDataNeed(assessment):
         a=rs.assessDataNeed(assessment)
         end=False

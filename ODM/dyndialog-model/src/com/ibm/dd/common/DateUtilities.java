@@ -126,6 +126,11 @@ public final class DateUtilities {
 	 	  return cal.getTime();
 	   }
 
+	   public static boolean withinYear(Date date){
+		 Date ayear=addDays(new Date(),-365);
+		 return date.after(ayear);
+	   }
+	   
 	   public static Calendar addDays(Calendar date, int days) {
 		   Calendar newDate = Calendar.getInstance();
 		   newDate.setTime(date.getTime());

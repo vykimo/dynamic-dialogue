@@ -2,13 +2,14 @@ package com.ibm.dd.ctx;
 
 import java.util.Date;
 
-public class Product {
+public class Product implements Comparable<Product>{
 	private String name;
 	private String type;
 	private String brand;
 	private String partNumber;
 	private Date acquisitionDate;
-	private boolean eligibleForUpgrade;
+	private boolean eligibleForUpgrade=false;
+	private boolean deviceProtection=false;
 	
 	public Product(){}
 	
@@ -65,5 +66,18 @@ public class Product {
 
 	public void setEligibleForUpgrade(boolean eligibleForUpgrade) {
 		this.eligibleForUpgrade = eligibleForUpgrade;
+	}
+	
+	public boolean isDeviceProtection() {
+		return deviceProtection;
+	}
+
+	public void setDeviceProtection(boolean deviceProtection) {
+		this.deviceProtection = deviceProtection;
+	}
+
+	@Override
+	public int compareTo(Product o) {
+		return (this.getPartNumber().compareTo(o.getPartNumber()));
 	}
 }

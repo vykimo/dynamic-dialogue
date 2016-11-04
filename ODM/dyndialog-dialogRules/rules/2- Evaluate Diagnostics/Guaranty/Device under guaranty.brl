@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Device under guaranty</name>
+  <uuid>475fef30-390c-4317-ae88-9389e9cd479d</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions
+ set 'the current answer' to a response from the last response of 'the assessment' 
+   where the question label of this response contains "related to physical damage" ;
+ set 'the impacted device' to a product ;
+if 
+
+  the value of 'the current answer' is not one of { "Cracked screens" , "Housing has 2 or more cracks" , "Smashed device" } 
+ and
+  the acquisition date of 'the impacted device' is within the year  
+ and
+  there is no response in the responses of 'the assessment' 
+  where the question label of this response contains "under guaranty" ,
+  
+then
+ add to 'the assessment' a new question with label: "You have device is under guaranty, do you want to file a claim?"
+   of type: "singleOption" 
+   and options: "Yes,No,Not know yet" ;
+    set the status of 'the assessment' to Investigation  ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

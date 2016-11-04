@@ -1,3 +1,10 @@
-/ODM/dyndialog-model/bin/
-/.metadata/
-/RemoteSystemsTempFiles/
+.metadata/
+ODM/dyndialog-model/bin/
+ODM/dyndialog-bom/output/
+ODM/dyndialog-bom/resources/xom-libraries/
+ODM/dyndialog-dialogRules/output/
+ODM/dyndialog-dialogRules/reports/
+ODM/dyndialog-dialogRules/resources/
+ODM/dyndialog-dataNeedsRules/output/
+ODM/dyndialog-dataNeedsRules/reports/
+ODM/dyndialog-dataNeedsRules/resources/

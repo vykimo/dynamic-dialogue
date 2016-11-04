@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
-  <name>Battery</name>
-  <uuid>815b2ca9-31b7-486c-a3b9-c7a061596d82</uuid>
-</ilog.rules.studio.model.base:RulePackage>

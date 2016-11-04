@@ -98,6 +98,11 @@ public class Assessment {
 		return false;
 	}
 	
+	public void addSetNextQuestion(String label,String type,String options) {
+		Question q=addQuestion(label,type,options);
+		setNextQuestion(q);
+	}
+	
 	public Question addQuestion(String label,String type,String options){
 		Question q = new Question();
 		q.setLabel(label);
@@ -105,6 +110,11 @@ public class Assessment {
 		q.parseOptionsAsCSV(options);
 		addQuestion(q);
 		return q;
+	}
+	
+	public void addSimpleSetNextQuestion(String label,String type) {
+		Question q=addSimpleQuestion(label,type);
+		setNextQuestion(q);
 	}
 	
 	public Question  addSimpleQuestion(String label,String type){

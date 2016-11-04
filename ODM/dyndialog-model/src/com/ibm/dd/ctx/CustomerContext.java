@@ -16,7 +16,7 @@ public class CustomerContext {
 	private HashMap<String,Fact> derivedFacts =new HashMap<String,Fact>() ;
 	private Set<Product> ownedProducts = new HashSet<Product>();
 	private Product impactedProduct;
-	private boolean deviceProtection=false;
+
 	
 	public CustomerContext(){}
 
@@ -59,13 +59,4 @@ public class CustomerContext {
 	public void setImpactedProduct(Product impactedProduct) {
 		this.impactedProduct = impactedProduct;
 	}
-
-	public boolean isDeviceProtection() {
-		return deviceProtection;
-	}
-
-	public void setDeviceProtection(boolean deviceProtection) {
-		this.deviceProtection = deviceProtection;
-	}
-
 }

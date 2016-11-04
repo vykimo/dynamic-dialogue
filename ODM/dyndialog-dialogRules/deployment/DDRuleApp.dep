@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="DDRuleApp">
   <name>DDRuleApp</name>
-  <uuid>068a0619-2bc0-4dbd-bfbe-a3731e622c26</uuid>
+  <uuid>e9eb41f4-7fac-4b62-a021-838818282939</uuid>
   <targets label="Bluemix Rule Service"/>
-  <operations operationName="AssessDataNeeds">
-    <operation href="AssessDataNeeds.dop#af46fd6c-7bd2-42c9-9888-1a6acf4e3e81"/>
+  <operations operationName="ManageDialog">
+    <operation href="ManageDialog.dop#0efff5f4-df7f-4d40-85f0-91c2bb73943a"/>
     <properties key="ruleset.version">
       <value><![CDATA[1.0]]></value>
-    </properties>
-    <properties key="ruleset.trace.enabled">
-      <value><![CDATA[true]]></value>
     </properties>
   </operations>
   <versionPolicies label="Increment minor version numbers" ruleset="INCREMENT_MINOR" recurrent="true">
