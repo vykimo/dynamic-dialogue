@@ -27,23 +27,20 @@ if os.environ.get('VCAP_SERVICES'):
     services = json.loads(os.environ.get('VCAP_SERVICES'))
     nlc_user = str(services['natural_language_classifier'][0]['credentials']['username'])
     nlc_pwd = str(services['natural_language_classifier'][0]['credentials']['password'])
-    classifierId=str(services['natural_language_classifier'][0]['credentials']['classifierId'])
 else:
-    f=open('../data/nlc-credentials.json','r')
-    credentials=json.load(f)
-    nlc_user=credentials['credentials']['username']
-    nlc_pwd=credentials['credentials']['password']
-    classifierId=credentials['credentials']['classifierId']
-    f.close()
-    print(classifierId)
-    
+  exit('Please run this application from Bluemix, binding the relevant Watson services')
 
 # Setup Flask
 port = int(os.getenv('VCAP_APP_PORT', 8080))
 app = Flask(__name__, static_url_path='')
 
+battery_classifier = {
+  'name': 'battery',
+  'training_file': 'data/device-trainSet.csv'
+}
+
 # setup dependant component
-nlc= NLClassifier(nlc_user,nlc_pwd,classifierId)
+nlc= NLClassifier(nlc_user, nlc_pwd, battery_classifier)
 
 
 @app.route("/")

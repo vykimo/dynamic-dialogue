@@ -1,19 +1,44 @@
 '''
 Front end for NLC transparent to the NLC used
+API Reference available here: https://www.ibm.com/watson/developercloud/natural-language-classifier/api/v1/
 '''
 # Import Watson Service SDKs
 from watson_developer_cloud import NaturalLanguageClassifierV1 as NLC
 
 class NLClassifier(object):
-	
-	def __init__(self,username,password,classifierId):
-		# Setup Watson SDK
-		self.natural_language_classifier = NLC(username=username,password=password)
-		self.classifierId=classifierId
-	
-	
-	def classify(self,text):
-		return self.natural_language_classifier.classify(self.classifierId, text)   
 
-	
+  def __init__(self, username, password, classifier):
+    # Setup Watson SDK
+    self.natural_language_classifier = NLC(username=username,password=password)
+
+    # Classifier information
+    self.classifier = {}
+    self.classifier['name'] = classifier['name']
+    self.classifier['training_file'] = classifier['training_file']
+
+    c = self.natural_language_classifier.list()
+    if any(d['name'] == self.classifier['name'] for d in c['classifiers'] ):
+      self.classifier['id'] = [ d['classifier_id'] for d in c['classifiers'] if d['name'] == self.classifier['name'] ][0]
+      print 'Found classifier id %s ' % self.classifier['id']
+    else:
+      print 'No classifier found, creating new from training set'
+      self.classifier['id']  = self.create_classifier()
+      print 'New classifier id: %s ' % self.classifier['id']
+  
+  ### Method to train the Watson Natural Language Classifier    
+  # The training set is delivered as a CSV file as specified in the Developer Guide
+  # https://www.ibm.com/watson/developercloud/doc/nl-classifier/data_format.shtml
+  def create_classifier(self):
+    training_data = open(self.classifier['training_file'], 'rb')
+    training_result = self.natural_language_classifier.create( training_data=training_data, name=self.classifier['name'] )
+    if training_result['status'] == "Training":
+      return training_result['classifier_id']
+    else:
+      print training_result
+      return "Error"
+    
+  
+  def classify(self,text):
+    return self.natural_language_classifier.classify(self.classifier['id'], text)   
+
 
