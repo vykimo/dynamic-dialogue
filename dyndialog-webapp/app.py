@@ -24,9 +24,9 @@ from  NLCclient import NLClassifier
 
 # When deploying to Bluemix Watson Service Credentials of bound services are available in VCAP_SERVICES
 if os.environ.get('VCAP_SERVICES'):
-    services = json.loads(os.environ.get('VCAP_SERVICES'))
-    nlc_user = str(services['natural_language_classifier'][0]['credentials']['username'])
-    nlc_pwd = str(services['natural_language_classifier'][0]['credentials']['password'])
+  services = json.loads(os.environ.get('VCAP_SERVICES'))
+  nlc_user = str(services['natural_language_classifier'][0]['credentials']['username'])
+  nlc_pwd = str(services['natural_language_classifier'][0]['credentials']['password'])
 else:
   exit('Please run this application from Bluemix, binding the relevant Watson services')
 
@@ -61,18 +61,24 @@ def assessClasse():
 # Process the first user query: The payload is a user query json object
 @app.route("/dd/api/a/classify",methods=['POST'])
 def classifyFirstUserQuery():
-	userQuery=request.get_json()
-	aQuery=userQuery['firstQueryContent']
-	categories=nlc.classify(aQuery)
-	userQuery['acceptedCategory']=categories['top_class']
-	assessment=buildAssessment("Bill")
-	assessment['customerQuery']=userQuery
-	if (userQuery['acceptedCategory'] == 'battery'):
-		aOut=BatteryProcessing.execute(assessment)
-	else:
-		#TODO add logic for processing other classes
-		aOut=assessment
-	return jsonify(aOut)
+  userQuery=request.get_json()
+  aQuery=userQuery['firstQueryContent']
+  print aQuery
+  categories=nlc.classify(aQuery)
+
+  # If the classifier is still in training we'll receive an error here. Pass the error to AngularJS
+  if 'error' in categories:
+    return jsonify(categories)
+
+  userQuery['acceptedCategory']=categories['top_class']
+  assessment=buildAssessment("Bill")
+  assessment['customerQuery']=userQuery
+  if (userQuery['acceptedCategory'] == 'battery'):
+    aOut=BatteryProcessing.execute(assessment)
+  else:
+    #TODO add logic for processing other classes
+    aOut=assessment
+  return jsonify(aOut)
 
 '''
 API to support the question and answer interaction

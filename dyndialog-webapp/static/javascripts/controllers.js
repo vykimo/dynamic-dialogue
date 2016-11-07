@@ -52,7 +52,11 @@ theCtrls.controller('HomeCtrl',  ['$scope','$location','ddService','$http','$sce
 						data: cq,
 						headers: {'Content-Type': 'application/json'}	
 				 }).then(function(response){
-					        
+                  if (response.data.error) { 
+                    alert(response.data.error);
+                    $location.path('/');
+                    return false;
+                  }
 					        assessment=response.data;
 					        ddService.setAssessment(assessment);
 					 		 $location.path('/dialog');
