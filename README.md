@@ -17,6 +17,19 @@ after signing up for Bluemix. You will attach the **IBM Watson™ Natural Langua
 
 ## What Does the App Do?
 **TODO** JEROME/HANS EXPLAIN APP
+The application is built as an examile to demonstrate a customer care application for a mobile phone company.
+The **IBM Watson Natural Language Classifier** system is trained to understand topics related to Mobile Phone batteries.
+
+The application has two components:
+- A AngularJS front end which allows users to enter natural language queries
+- A Python back end which offers a REST interface for the front end to communicate with
+    * The Python application binds to **IBM Watson™ Natural Language Classifier** and **Retrieve and Rank** services
+
+## Application flow
+
+1. The user enters a query (related to their mobile phone battery) on the website using natural language
+2. The back-end application uses **Natural Language Classifier** to classify the query. 
+3. Whatever happens next happens next
 
 ## Deploying the application
 The application can be deployed in two ways:
