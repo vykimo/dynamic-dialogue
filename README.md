@@ -17,8 +17,11 @@ after signing up for Bluemix. You will attach the **IBM Watson™ Natural Langua
 
 ## What Does the App Do?
 **TODO** JEROME/HANS EXPLAIN APP
-The application is built as an examile to demonstrate a customer care application for a mobile phone company.
-The **IBM Watson Natural Language Classifier** system is trained to understand topics related to Mobile Phone batteries.
+The application is built as an examile to demonstrate a customer care application for a mobile phone company. 
+The application code simulates reaching out to a Customer Relationship Management (CRM) system to get details about the products belonging to a specific customer. 
+As the customer writes their query in natural language , the Natrual Language Classifier will classify the query. Currently the **IBM Watson Natural Language Classifier** system
+is trained to understand topics related to Mobile Phone batteries.
+
 
 The application has two components:
 - A AngularJS front end which allows users to enter natural language queries
@@ -27,9 +30,10 @@ The application has two components:
 
 ## Application flow
 
+
 1. The user enters a query (related to their mobile phone battery) on the website using natural language
-2. The back-end application uses **Natural Language Classifier** to classify the query. 
-3. Whatever happens next happens next
+1. The back-end application uses **Natural Language Classifier** to classify the query. 
+1. Whatever happens next happens next
 
 ## Deploying the application
 The application can be deployed in two ways:
@@ -81,7 +85,8 @@ A reference guide can be found [here](https://new-console.ng.bluemix.net/docs/cl
      When the push is completed the application details will be reported, including the randomly generated URL. 
      Navigate to this URL to view and use the application.
     
-
+## Building the application
+The application design 
 
 **TODO**
 Deside if ODM files should be included here, if so add explanations. If not find a new home for them, and maybe mention/link from here.
