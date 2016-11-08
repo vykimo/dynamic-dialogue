@@ -34,9 +34,12 @@ else:
 port = int(os.getenv('VCAP_APP_PORT', 8080))
 app = Flask(__name__, static_url_path='')
 
+# The NLC training data is typically not included in a production system, as the training is normally
+# done by a data scientist. Customer facing applications will therefore typically not include
+# code to load training sets
 battery_classifier = {
   'name': 'battery',
-  'training_file': 'data/device-trainSet.csv'
+  'training_file': 'data/device-trainSet.csv' 
 }
 
 # setup dependant component
