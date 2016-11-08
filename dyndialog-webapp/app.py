@@ -65,8 +65,11 @@ def classifyFirstUserQuery():
   aQuery=userQuery['firstQueryContent']
   print aQuery
   categories=nlc.classify(aQuery)
-
-  # If the classifier is still in training we'll receive an error here. Pass the error to AngularJS
+  
+  # In a typical setup the system is fully trained and verified by a data scientist before exposing data to a front end. 
+  # However, in this demo application the Watson NLC system is trained at application push time, so there is a chance that 
+  # users attempt to use the system before the Watson NLC system is fully trained.
+  # If the classifier is still in training we'll receive an error here. Pass the error to AngularJS so the user knows the system is still in training.
   if 'error' in categories:
     return jsonify(categories)
 

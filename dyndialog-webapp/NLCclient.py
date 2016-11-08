@@ -41,6 +41,9 @@ class NLClassifier(object):
     
   
   def classify(self,text):
+    # Typically in a production system Watson NLC will be fully trained and verified by a data scientist before the system is ever 
+    # exposed in production. However because this is a demo application where Watson NLC is trained at application deployment time,
+    # we will need to have a check to verify that the training is completed.
     if self.classifier['status'] == "Training":
       r = self.natural_language_classifier.status(self.classifier['id'])
       if r['status'] == "Training":
