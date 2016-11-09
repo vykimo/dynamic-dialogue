@@ -19,8 +19,8 @@ after signing up for Bluemix. You will attach the **IBM Watson™ Natural Langua
 **TODO** JEROME/HANS EXPLAIN APP
 The application is built as an examile to demonstrate a customer care application for a mobile phone company. 
 The application code simulates reaching out to a Customer Relationship Management (CRM) system to get details about the products belonging to a specific customer. 
-As the customer writes their query in natural language , the Natrual Language Classifier will classify the query. Currently the **IBM Watson Natural Language Classifier** system
-is trained to understand topics related to Mobile Phone batteries.
+As the customer writes their query in natural language , the Natrual Language Classifier will classify the query. In this demonstration the **IBM Watson Natural Language Classifier** system
+is trained to understand topics related to Mobile Phone batteries. Once the query is classified, the query is sent to the ***Business Rules*** engine to assess whether 
 
 
 The application has two components:
@@ -87,6 +87,19 @@ A reference guide can be found [here](https://new-console.ng.bluemix.net/docs/cl
     
 ## Building the application
 The application design 
+
+### Create a service instance of ***IBM Watson Natural Language Classifier***
+Train to understand sentences that relate to device battery
+
+### Create a service instance of ***Business Rules***
+Train to do stuff
+
+More information in [Bluemix Documentation Pages](https://console.eu-gb.bluemix.net/docs/services/rules/rules.html)
+
+### 
+### Create the glue code
+
+
 
 **TODO**
 Deside if ODM files should be included here, if so add explanations. If not find a new home for them, and maybe mention/link from here.
