@@ -3,7 +3,7 @@
 
 ###Context driven dynamic dialog example implemented in Cloud Foundry
 
-This application demonstrates how to combine **IBM Watson™ Natural Language Classifier** and **Retrieve and Rank** with a rule-based system to offer a context driven conversation solution, full flexibility in terms of code change, empowering the business user to change the conversation flow and recommendations. To learn basic concepts, see [Cognitive concepts 101](https://developer.ibm.com/cloudarchitecture/docs/cognitive-concepts-101/).
+This application demonstrates how to combine **IBM Watson™ Natural Language Classifier** and **Retrieve and Rank** with a rule-based system (ODM Bluemix Rule Service) to offer a context driven conversation solution, full flexibility in terms of code change, empowering the business user to change the conversation flow and recommendations. To learn basic concepts, see [Cognitive concepts 101](https://developer.ibm.com/cloudarchitecture/docs/cognitive-concepts-101/).
 
 
 ----
@@ -17,23 +17,33 @@ after signing up for Bluemix. You will attach the **IBM Watson™ Natural Langua
 
 ## What Does the App Do?
 **TODO** JEROME/HANS EXPLAIN APP
-The application is built as an examile to demonstrate a customer care application for a mobile phone company. 
-The application code simulates reaching out to a Customer Relationship Management (CRM) system to get details about the products belonging to a specific customer. 
-As the customer writes their query in natural language , the Natrual Language Classifier will classify the query. In this demonstration the **IBM Watson Natural Language Classifier** system
-is trained to understand topics related to Mobile Phone batteries. Once the query is classified, the query is sent to the ***Business Rules*** engine to assess whether 
+The application is built as an example to demonstrate a customer care application for a mobile telecom career company. 
+The application code simulates reaching out to a Customer Support team to ask question about battery issue on mobile device, the system load customer data and tries to assess 
+the problem to resolve via existing data, previous answers and recommendations. 
 
+As the customer writes their query in natural language , the Natural Language Classifier will classify the query. In this demonstration the **IBM Watson Natural Language Classifier** system
+is trained to understand topics related to Mobile Phone batteries. Once the query is classified, the query is wrapped inside an assessment object that is used
+to keep the context of the dialog and the customer data. This assessment is sent to the ***Business Rules*** engine to first assess if all the data needed, to deliver recommendations, are
+present. Two type of data validation rules are implemented in a first decision service: customer profile present, and if the first query was classified as 'battery' issue
+or device issue then load the owned products. Those data are coming from a Customer Relationship Management (CRM) system running on Premise. 
+When data are loaded, the assessment is moved to 'Investigation' state where user will answer a set of questions to get the 'expert system' to deliver the most accurate recommendation.
+The question flow is no more static but will take care of previous answer and customer data. 
 
 The application has two components:
-- A AngularJS front end which allows users to enter natural language queries
-- A Python back end which offers a REST interface for the front end to communicate with
+- A AngularJS front end which allows users to enter natural language queries, and answer questions
+- A Python back end which offers a REST interface for the front end to communicate with the different components of the solution:
     * The Python application binds to **IBM Watson™ Natural Language Classifier** and **Retrieve and Rank** services
+    * DOM Rule Service on Bluemix
+    * a Mockup CRM application that in real deployment will be a API defined in API connect and front end to the CRM application.
 
 ## Application flow
 
-
 1. The user enters a query (related to their mobile phone battery) on the website using natural language
-1. The back-end application uses **Natural Language Classifier** to classify the query. 
-1. Whatever happens next happens next
+2. The back-end application uses **Natural Language Classifier** to classify the query. 
+3. From the category derived, the query is wrapped in an Assessment object that is sent to ODM Bluemix Rule Service, data validation decision service.
+4. Until the data are not completed, load the data from the different data source and call the ODM Bluemix Rule Service, data validation decision service
+5. Once data completed, call the ODM Bluemix Rule Service, manage dialog decision service to get the next best question to ask
+6. User select the best answer, the answers are kept in the Assessment object, and sent to ODM Bluemix Rule Service, manage dialog decision service. Continue until reaching recommendation
 
 ## Deploying the application
 The application can be deployed in two ways:
