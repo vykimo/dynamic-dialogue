@@ -53,7 +53,6 @@ class NLClassifier(object):
       else:
         return {"error": "Unknown status for classifier", "message": r['status']}
 
-    print "seems like the system thinks we're good to go"
     return self.natural_language_classifier.classify(self.classifier['id'], text)   
 
 

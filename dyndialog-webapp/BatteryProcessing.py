@@ -16,55 +16,79 @@ ruleApp = {
 rs=RuleServiceClient(ruleApp = ruleApp)
 
 '''
-Use first ruleset in ODM / IBM Business Rules to assess the data quality and as
-potential outcome 
+Use first ruleset in ODM / IBM Business Rules to assess the data quality and 
+load existing data from other sources as appropriate
 '''
-def assessDataNeed(assessment):
-        a=rs.assessDataNeed(assessment)
-        end=False
-        while not end:
-                if a['status'] == 'Uncompleted':
-                        crm=CRM()
-                        if isRecommendationPresent(a,'Load Customer'):
-                                customer=crm.loadCustomer(a['customerId'])
-                                a['customerContext']=customer
-                        if isRecommendationPresent(a,'Load Product'):
-                                products=crm.loadProducts(a['customerId'])
-                                a['customerContext']['ownedProducts']=products
-                        a=rs.assessDataNeed(a)
-                else:
-                        if a['status'] == 'DataCompleted':
-                                a=rs.processQuestion(a)
-                        end=True
-        return a
+def encrichAssessmentData(assessment):
+  ruleSet = 'AssessDataNeeds'
+
+  query = {
+    'assessment': assessment
+  }
+  
+  # Query the AssessDataNeeds ruleset to see if we have all the required data available
+  r=rs.queryRuleset(ruleSet, query)
+  
+  # Extract the assessment data from the decision
+  a = r['assessment']
+
+  ## Cycle through the recommandations until the data is deemed to be complete
+  complete=False
+  while not complete:
+    if a['status'] == 'Uncompleted':
+      
+      if isRecommendationPresent(a,'Load Customer'):
+        crm=CRM()
+        customer=crm.loadCustomer(a['customerId'])
+        a['customerContext']=customer
+        
+      if isRecommendationPresent(a,'Load Product'):
+        products=crm.loadProducts(a['customerId'])
+        a['customerContext']['ownedProducts']=products
+
+      # Re-assess with latest data
+      query['assessment'] = a
+      r = rs.queryRuleset(ruleSet, query)
+      a = r['assessment']
+      
+    elif a['status'] == 'DataCompleted':
+      #a = rs.processQuestion(a)
+      complete=True
+  return a
 
 '''
    Main entry point to process the logic flow of the Battery Conversation
 '''
 def execute(assessment):
-        # First assess what data to load
-        if assessment['status'] == 'New':
-                a=assessDataNeed(assessment)
-        else:
-                a=rs.processQuestion(assessment)
-        return a
 
-
-def addRecommendation(assessment,message):
-        recommendations=assessment['recommendations']
-        
+  if assessment['status'] == 'New':
+    # Run through assessDataNeed rules and populate assessment data from external sources as recommended by ruleset
+    a = encrichAssessmentData(assessment)
+    query = {
+      'assessment': a
+    }
+  else:
+    # This is part of an ongoing dialog
+    query = {
+      'assessment': assessment
+    }
+  
+  # Process the question by running the assessment through the ManageDialog ruleset
+  ruleSet = 'ManageDialog'
+  r = rs.queryRuleset(ruleSet, query)
+  return r['assessment']
+     
                
 def isRecommendationPresent(assessment,recommendation):
-        recommendations=assessment['recommendations']
-        for r in recommendations:
-                if recommendation in r['message']:
-                        return True
-        return False
+  for r in assessment['recommendations']:
+    if recommendation in r['message']:
+      return True
+  return False
 
 
 if __name__ == "__main__":
-        a={"customerId":'bill',"status":"New","customerQuery":{"firstQueryContent":"battery","categories":[],"acceptedCategory":"battery"},"creationDate":"2016-10-28T00:00:00.000+0000"}
+  a={"customerId":'bill',"status":"New","customerQuery":{"firstQueryContent":"battery","categories":[],"acceptedCategory":"battery"},"creationDate":"2016-10-28T00:00:00.000+0000"}
 #       c=CRM.loadCustomer(a,'bill')
 #       a['assessment']['customerContext']=c
-        a=execute(a)
-        print(a)
+  a=execute(a)
+  print(a)

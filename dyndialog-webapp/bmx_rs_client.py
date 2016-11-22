@@ -22,13 +22,17 @@ class RuleServiceClient(object):
     contentOctet={'Content-Type': 'application/octet-stream', 'Accept': 'application/json'}
     auth=(self.user, self.pwd)
     
+    
+    self.ruleApp = ruleApp['name']
+
     # Check if the requested ruleApp is available, and upload if necessary
-    ruleAppURL = self.adminUrl + '/ruleapps/' + ruleApp['name']
-    r = requests.get(ruleAppURL, auth=auth, headers=acceptJson)
+    r = requests.get(self.adminUrl + '/ruleapps/' + self.ruleApp, 
+          auth=auth, 
+          headers=acceptJson)
     if r.status_code == 200:
       if len(r.json()) == 0:
         # We must upload the rulesApp
-        print 'Uploading ruleApp: ' + ruleApp['name'] + ' from file: ' + ruleApp['appArchive']
+        print 'Uploading ruleApp: ' + self.ruleApp + ' from file: ' + ruleApp['appArchive']
         data = open(ruleApp['appArchive'], 'rb').read()
         u = requests.post(self.adminUrl + '/ruleapps', 
               auth=auth, 
@@ -48,7 +52,7 @@ class RuleServiceClient(object):
       self.dialogRuleSet    = 'DDRuleApp/ManageDialog'
     else:
       print 'Status code was ' + str(r.status_code)
-      print ruleAppURL
+
       
     # Check if the Model is available
     r = requests.get(self.adminUrl + '/xoms/' + os.path.basename(ruleApp['appModel']), 
@@ -71,7 +75,7 @@ class RuleServiceClient(object):
           print 'Status code was ' + str(u.status_code)
           
         resUri = u.json()['resource']['uri']
-        l = requests.post(self.adminUrl + '/libraries/' + ruleApp['name'] + '_1.0/1.0', 
+        l = requests.post(self.adminUrl + '/libraries/' + self.ruleApp + '_1.0/1.0', 
               auth=(self.user, self.pwd), 
               data=resUri, 
               headers={'Content-Type': 'text/plain', 'Accept': 'application/json'})
@@ -80,6 +84,25 @@ class RuleServiceClient(object):
           print l.status_code
           print l.text
 
+  def queryRuleset(self, ruleSet, query):
+    url = self.url + '/' + self.ruleApp + '/' + ruleSet 
+    print 'Request>>' + str(query)
+    r = requests.post(url,
+          json    = query,
+          auth    = (self.user, self.pwd),
+          headers = {'Content-Type': 'application/json', 'Accept': 'application/json'} )
+        
+    if r.status_code == 200:
+      print r.text
+      return r.json()
+    else:
+      print 'Error querying ruleset ' + ruleSet
+      print url
+      print query
+      print r.status_code
+      print r.text
+      return r.json()
+      
   def assessDataNeed(self,assessment):
     request={}
     request['assessment']=assessment
