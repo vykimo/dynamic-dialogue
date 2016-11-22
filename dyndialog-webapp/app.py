@@ -13,6 +13,9 @@ This example is based on battery issue reporting.
 
 10/2016 Jerome Boyer - IBM -  boyerje@us.ibm.com
 
+Natural Language Classifier: https://www.ibm.com/watson/developercloud/doc/nl-classifier/
+IBM Bluemix Business Rules: https://console.ng.bluemix.net/docs/services/rules/rules.html
+
 '''
 import os, json, requests
 from flask import Flask,request,jsonify
@@ -67,8 +70,13 @@ def classifyFirstUserQuery():
   userQuery=request.get_json()
   aQuery=userQuery['firstQueryContent']
   print aQuery
-  categories=nlc.classify(aQuery)
   
+  # Pass the query to the Natural Language Classifier. 
+  # The natural language classifier returns a collection of classifications ordered by confidence. 
+  # The top class is returned in "top_class".
+  # Details here: https://www.ibm.com/watson/developercloud/natural-language-classifier/api/v1/?python#classify
+  categories=nlc.classify(aQuery)
+
   # In a typical setup the system is fully trained and verified by a data scientist before exposing data to a front end. 
   # However, in this demo application the Watson NLC system is trained at application push time, so there is a chance that 
   # users attempt to use the system before the Watson NLC system is fully trained.
@@ -77,8 +85,13 @@ def classifyFirstUserQuery():
     return jsonify(categories)
 
   userQuery['acceptedCategory']=categories['top_class']
+
+  # Create an assessment object that holds all the information we have gathered so far
   assessment=buildAssessment("Bill")
   assessment['customerQuery']=userQuery
+
+  # Each potential category may have a different flow. 
+  # This demo has implemented logic related to device batteries using IBM Business Rules (IBM Operational Decidison Manager)
   if (userQuery['acceptedCategory'] == 'battery'):
     aOut=BatteryProcessing.execute(assessment)
   else:
