@@ -71,7 +71,7 @@ class RuleServiceClient(object):
           print 'Status code was ' + str(u.status_code)
           
         resUri = u.json()['resource']['uri']
-        l = requests.post(self.adminUrl + '/libraries/' + ruleApp['name'] + '/1.0', 
+        l = requests.post(self.adminUrl + '/libraries/' + ruleApp['name'] + '_1.0/1.0', 
               auth=(self.user, self.pwd), 
               data=resUri, 
               headers={'Content-Type': 'text/plain', 'Accept': 'application/json'})
