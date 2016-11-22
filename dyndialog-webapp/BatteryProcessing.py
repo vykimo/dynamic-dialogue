@@ -6,10 +6,17 @@ from bmx_rs_client import RuleServiceClient
 from crm_client import CRM
 import json
 
-rs=RuleServiceClient()
+ruleApp = {
+  'name': 'DDRuleApp',
+  'appArchive': 'data/ruleApp_DDRuleApp_1.0.jar',
+  'appModel': 'data/dyndialog-model.zip'
+}
+
+
+rs=RuleServiceClient(ruleApp = ruleApp)
 
 '''
-Use first ruleset in ODM to assess the data quality and as
+Use first ruleset in ODM / IBM Business Rules to assess the data quality and as
 potential outcome 
 '''
 def assessDataNeed(assessment):
