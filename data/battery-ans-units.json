@@ -1,0 +1,412 @@
+{
+  "source_document_id": "applebatteryrecommendations",
+  "metadata": [
+    {
+      "content": "text/html; charset=UTF-8",
+      "name": "Content-Type"
+    },
+    {
+      "content": "Jerome Boyer",
+      "name": "author"
+    },
+    {
+      "content": "2016-07-16",
+      "name": "publicationdate"
+    }
+  ],
+  "warnings": [],
+  "answer_units": [
+    {
+      "parent_id": "",
+      "direction": "ltr",
+      "type": "h2",
+      "content": [
+        {
+          "text": "Does your iPhone battery drain too quickly? Try restarting it first. You can also learn tips to extend the battery life of your iPhone . Are you having trouble getting your iPhone to power on ? First, make sure you've given your iPhone's battery enough time to charge.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Battery & Power",
+      "id": "7dd7cd6f-644f-4d60-97c2-236d35819fd2"
+    },
+    {
+      "parent_id": "",
+      "direction": "ltr",
+      "type": "h2",
+      "content": [
+        {
+          "text": "Send in for repair. Start a service request online or by calling Apple Support and we'll send a box right away to collect your iPhone. You can then arrange to ship it to an Apple Repair Center at your convenience. We'll deliver your iPhone back to you\u00a0in 3-5 business days. Bring in for repair. Make an appointment at an Apple Store or one of our many Apple authorized service locations. We'll try to fix your iPhone during your visit. In more complex cases, we might need to send it to an Apple Repair Center. If we do, your iPhone will be ready for pickup in 3-5 business days.\u00a0If your iPhone is under warranty, many of our locations can offer you a loaner while your iPhone is being repaired. Your data is important. Be sure to back up your iPhone before you get service.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Get repairs for battery and power issues",
+      "id": "1a8ea37b-230f-49a9-a143-2cae75b4c1ca"
+    },
+    {
+      "parent_id": "",
+      "direction": "ltr",
+      "type": "h2",
+      "content": [
+        {
+          "text": "Repair pricing depends on the diagnosis and your coverage under warranty or AppleCare+. Other power issues require further testing before we can give pricing. If you're covered under warranty or AppleCare+, we'll replace your battery at no charge if it retains less than 80 percent of its original capacity. Not sure if you\u2019re covered? Check if you have AppleCare+ by entering your iPhone serial number.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "iPhone battery and power repair costs",
+      "id": "1c5c08f9-310d-4116-b9f0-0b76a1b4458c"
+    },
+    {
+      "parent_id": "",
+      "direction": "ltr",
+      "type": "h1",
+      "content": [
+        {
+          "text": "\u201cBattery life\u201d is the amount of time your device runs before it needs to be recharged. \u201cBattery lifespan\u201d is the amount of time your battery lasts until it needs to be replaced. Maximize both and you\u2019ll get the most out of your Apple devices, no matter which ones you own. General Tips Tips for iOS Devices Tips for Apple Watch Tips for iPod Tips for MacBook",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Maximizing Battery Life and Lifespan",
+      "id": "d90eb79d-4a4a-4751-b9d2-d3e8d981bcc3"
+    },
+    {
+      "parent_id": "d90eb79d-4a4a-4751-b9d2-d3e8d981bcc3",
+      "direction": "ltr",
+      "type": "h3",
+      "content": [
+        {
+          "text": "",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "General Performance Tips",
+      "id": "76a257b5-f304-41e0-a3cb-d3249eca13ec"
+    },
+    {
+      "parent_id": "76a257b5-f304-41e0-a3cb-d3249eca13ec",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Apple software updates often include advanced energy-saving technologies, so always make sure your device is using the latest version of iOS, OS X, or watchOS. How to update iOS How to update OS X How to update watchOS",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Update to the latest software.",
+      "id": "96b17946-00a2-4004-834d-376e2eac97ce"
+    },
+    {
+      "parent_id": "76a257b5-f304-41e0-a3cb-d3249eca13ec",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Your device is designed to perform well in a wide range of ambient temperatures, with 62\u00b0 to 72\u00b0\u00a0F (16\u00b0 to 22\u00b0\u00a0C) as the ideal comfort zone. It\u2019s especially important to avoid exposing your device to ambient temperatures higher than 95\u00b0\u00a0F (35\u00b0\u00a0C), which can permanently damage battery capacity. That is, your battery won\u2019t power your device as long on a given charge. Charging the device in high ambient temperatures can damage it further. Even storing a battery in a hot environment can damage it irreversibly. When using your device in a very cold environment, you may notice a decrease in battery life, but this condition is temporary. Once the battery\u2019s temperature returns to its normal operating range, its performance will return to normal as well.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Avoid extreme ambient temperatures.",
+      "id": "0471fbef-2522-4c6c-95d9-2e27cf0440ed"
+    },
+    {
+      "parent_id": "0471fbef-2522-4c6c-95d9-2e27cf0440ed",
+      "direction": "ltr",
+      "type": "h5",
+      "content": [
+        {
+          "text": "32\u00b0\u00a0F 95\u00b0\u00a0F Too Cold Room Temperature Too Hot iPhone, iPad, iPod, and Apple Watch work best at 32\u00b0 to 95\u00b0\u00a0F (0\u00b0 to 35\u00b0\u00a0C) ambient temperatures. Storage temperature: -4\u00b0 to 113\u00b0\u00a0F (-20\u00b0 to 45\u00b0\u00a0C).",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "iPhone, iPad, iPod, and Apple Watch Comfort Zone",
+      "id": "bbacc791-1936-4e50-a6f2-e7d294aa0a98"
+    },
+    {
+      "parent_id": "0471fbef-2522-4c6c-95d9-2e27cf0440ed",
+      "direction": "ltr",
+      "type": "h5",
+      "content": [
+        {
+          "text": "50\u00b0\u00a0F 95\u00b0\u00a0F Too Cold Room Temperature Too Hot MacBook works best at 50\u00b0 to 95\u00b0\u00a0F (10\u00b0 to 35\u00b0\u00a0C) ambient temperatures. Storage temperature: -4\u00b0 to 113\u00b0\u00a0F (-20\u00b0 to 45\u00b0\u00a0C).",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "MacBook Comfort Zone",
+      "id": "380cf398-7d38-4ee1-a3ae-43fc1992099e"
+    },
+    {
+      "parent_id": "76a257b5-f304-41e0-a3cb-d3249eca13ec",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Charging your device when it\u2019s inside certain styles of cases may generate excess heat, which can affect battery capacity. If you notice that your device gets hot when you charge it, take it out of its case first. For Apple Watch Edition models, make sure the cover of the magnetic charging case is off.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Remove certain cases during charging.",
+      "id": "86cd6940-684a-40ea-ad4b-38df581308d9"
+    },
+    {
+      "parent_id": "76a257b5-f304-41e0-a3cb-d3249eca13ec",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "If you want to store your device long term, two key factors will affect the overall health of your battery: the environmental temperature and the percentage of charge on the battery when it\u2019s powered down for storage. Therefore, we recommend the following: Do not fully charge or fully discharge your device\u2019s battery \u2014 charge it to around 50%. If you store a device when its battery is fully discharged, the battery could fall into a deep discharge state, which renders it incapable of holding a charge. Conversely, if you store it fully charged for an extended period of time, the battery may lose some capacity, leading to shorter battery life. Power down the device to avoid additional battery use. Place your device in a cool, moisture-free environment that\u2019s less than 90\u00b0 F (32\u00b0 C). If you plan to store your device for longer than six months, charge it to 50% every six months. Depending on how long you store your device, it may be in a low-battery state when you remove it from long-term storage. After it\u2019s removed from storage, it may require 20 minutes of charging with the original adapter before you can use it.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Store it half-charged when you store it long\u00a0term.",
+      "id": "eab407ec-aaf4-42c8-969f-6c7851fdafa5"
+    },
+    {
+      "parent_id": "d90eb79d-4a4a-4751-b9d2-d3e8d981bcc3",
+      "direction": "ltr",
+      "type": "h3",
+      "content": [
+        {
+          "text": "",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Tips for iPhone, iPad, and iPod\u00a0touch",
+      "id": "cd2bfdbe-8760-441a-bf6a-4941e0c26ba6"
+    },
+    {
+      "parent_id": "cd2bfdbe-8760-441a-bf6a-4941e0c26ba6",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Always make sure your device is using the latest version of iOS. If you are using iOS 5 or later, see if you need an update. Go to Settings > General > Software Update. If an update is available, you can plug your device into a power source and update wirelessly or plug it into your computer and update with the latest version of iTunes. Learn more about updating iOS",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Update to the latest software.",
+      "id": "1fd3a131-9140-4b30-97ae-822abdf9fe9e"
+    },
+    {
+      "parent_id": "cd2bfdbe-8760-441a-bf6a-4941e0c26ba6",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "There are two simple ways you can preserve battery life \u2014 no matter how you use your device: adjust your screen brightness and use Wi-Fi. Dim the screen or turn on Auto-Brightness to extend battery life. To dim, swipe up from the bottom of any screen to open Control Center and drag the Brightness slider to the left. Auto-Brightness adjusts your screen to lighting conditions automatically. To activate it, go to Settings > Display & Brightness and set Auto-Brightness to On. When you use your device to access data, a Wi-Fi connection uses less power than a cellular network \u2014 so keep Wi-Fi on at all times. There are two ways to turn on Wi-Fi: Swipe up to open Control Center, tap the Wi-Fi icon, and log in to a Wi-Fi network. Go to Settings > Wi-Fi to access a Wi-Fi network.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Optimize your settings.",
+      "id": "c31d32da-a2f4-4be2-8998-4c3aa9eb7380"
+    },
+    {
+      "parent_id": "cd2bfdbe-8760-441a-bf6a-4941e0c26ba6",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Introduced with iOS 9, Low Power Mode is an easy way to extend the battery life of your iPhone when it starts to get low. Your iPhone lets you know when your battery level goes down to 20%, and again at 10%, and lets you turn on Low Power Mode with one tap. Or you can enable it by going to Settings > Battery. Low Power Mode reduces display brightness, optimizes device performance, and minimizes system animations. Apps including Mail will not download content in the background, and features like AirDrop, iCloud sync, and Continuity will be disabled. You can still use key functions like making and receiving phone calls, email, and messages, accessing the Internet, and more. And when your phone charges up again, Low Power Mode automatically switches off.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Enable Low Power Mode.",
+      "id": "9d71b60f-cc27-4414-b3ad-b54cfc9fc099"
+    },
+    {
+      "parent_id": "cd2bfdbe-8760-441a-bf6a-4941e0c26ba6",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "iOS 9 is designed to be the most battery-efficient iOS ever. And it gives you more precise ways to manage your device\u2019s battery life, because you can see the proportion of your battery used by each app (unless the device is charging). To view your usage, go to Settings > Battery. Here are the messages you may see listed below the apps you\u2019ve been using: Background Activity. This indicates that the battery was used by the app while it was in the background \u2014 that is, while you were using another app. To improve battery life, you can turn off the feature that allows apps to refresh in the background. Go to Settings > General > Background App Refresh and set the switch to Off. If the Mail app lists Background Activity, you can choose to fetch data manually or increase the fetch interval. Go to Settings > Mail, Contacts, Calendars > Fetch New Data. Location and Background Location. This indicates that the app is using location services. You can optimize your battery life by turning off Location Services for the app. Turn off in Settings > Privacy > Location Services. In Location Services, you can see each app listed with its permission setting. Apps that recently used location services have an indicator next to the on/off switch. Home & Lock Screen. This indicates that the Home screen or Lock screen was displayed on your device. For example, the display was awakened by pressing the Home button or by a notification. If an app frequently wakes your display with notifications, you can turn off push notifications for the app in Settings > Notifications. Tap App and set Allow Notifications to Off. No Cell Coverage and Low Signal. This indicates that either you are in a poor cell coverage area and your iOS device is searching for a better signal or that you\u2019ve used your device in low-signal conditions, which has affected your battery life. You can optimize your battery life by turning on Airplane mode. Swipe up to open Control Center and tap the Airplane mode icon. Note that you cannot make or receive calls while in Airplane mode.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "View Battery Usage information",
+      "id": "08b080e3-dd01-44ad-8ac2-0f5b69293563"
+    },
+    {
+      "parent_id": "cd2bfdbe-8760-441a-bf6a-4941e0c26ba6",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Make sure your computer is plugged in and powered on when you\u2019re using it to charge your iOS device via USB. If your device is connected to a computer that\u2019s turned off or is in sleep or standby mode, your device\u2019s battery may drain. Note that iPhone 3G and iPhone 3GS cannot be charged with a FireWire power adapter or FireWire-based car charger.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Plug in and power on your computer to charge your device.",
+      "id": "82a6c4f8-eaa0-4c0b-8413-7bd1e9a0b0a7"
+    },
+    {
+      "parent_id": "d90eb79d-4a4a-4751-b9d2-d3e8d981bcc3",
+      "direction": "ltr",
+      "type": "h3",
+      "content": [
+        {
+          "text": "",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Tips for Apple Watch",
+      "id": "5770d5cb-2ef0-4c85-a712-a33ff150f17e"
+    },
+    {
+      "parent_id": "5770d5cb-2ef0-4c85-a712-a33ff150f17e",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Always make sure your Apple Watch is using the latest version of watchOS. To see if you need an update, open the Apple Watch app on your iPhone and go to My Watch > General > Software Update. If an update is available, connect your iPhone to Wi-Fi, attach the charger to your Apple Watch (make sure it has at least 50% charge), and update wirelessly. Learn more about updating watchOS",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Update to the latest software.",
+      "id": "ae82ef86-ceca-4b3a-8f18-e8bab9d32cdd"
+    },
+    {
+      "parent_id": "5770d5cb-2ef0-4c85-a712-a33ff150f17e",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "There are a few ways you can preserve battery life on your Apple Watch: During running and walking workouts, turn on Power Saving Mode to disable the heart rate sensor. To do this, open the Apple Watch app on iPhone, go to My Watch > Workout, and turn on Power Saving Mode. Note that when the heart rate sensor is off, calorie burn calculations may not be as accurate. For longer workouts, you can choose to use a Bluetooth chest strap instead of the built-in heart rate sensor. To pair the Bluetooth chest strap with your watch, make sure the strap is in pairing mode, then open Settings on Apple Watch, select Bluetooth, and choose from the list of Health Devices. If you\u2019re very active with your hands and your watch display turns on more than you think it should, you can turn off the Activate on Wrist Raise feature. Open Settings on Apple Watch, select General, and turn Activate on Wrist Raise off. When you want to turn on the display, just tap\u00a0it. Disabling Bluetooth on your iPhone increases the battery drain on your Apple Watch. For more power-efficient communication between the devices, keep Bluetooth enabled on iPhone.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Adjust your settings.",
+      "id": "5b522bf1-362c-4ba5-9e03-90f260d3a813"
+    },
+    {
+      "parent_id": "5770d5cb-2ef0-4c85-a712-a33ff150f17e",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "To view your usage and standby information, open the Apple Watch app on iPhone and go to My Watch > General > Usage.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "View Battery Usage information",
+      "id": "c676acb2-7757-4354-983b-8286e0266852"
+    },
+    {
+      "parent_id": "5770d5cb-2ef0-4c85-a712-a33ff150f17e",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "If you want to charge from your computer, make sure it is plugged in and powered on when you\u2019re using it to charge your Apple Watch via USB. If your Apple Watch is connected to a computer that\u2019s turned off or is in sleep or standby mode, the Apple Watch battery may drain. If your Apple Watch battery needs service, use Apple or an authorized service provider.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Plug in and power on your computer to charge your Apple\u00a0Watch.",
+      "id": "b122b9e1-8802-45b4-8b48-a6c59f6e26c8"
+    },
+    {
+      "parent_id": "d90eb79d-4a4a-4751-b9d2-d3e8d981bcc3",
+      "direction": "ltr",
+      "type": "h3",
+      "content": [
+        {
+          "text": "",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Tips for iPod shuffle, iPod\u00a0nano and iPod\u00a0classic",
+      "id": "c5862e7a-4a06-4e8c-9a2b-9718fcad64bf"
+    },
+    {
+      "parent_id": "c5862e7a-4a06-4e8c-9a2b-9718fcad64bf",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Always make sure your iPod is using the latest version of Apple software. Put your iPod in its dock or plug it into your computer, and iTunes will notify you of available updates.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Update to the latest software.",
+      "id": "5430254a-32c4-421a-bd4f-6fc5a863be15"
+    },
+    {
+      "parent_id": "c5862e7a-4a06-4e8c-9a2b-9718fcad64bf",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Hold and pause. Set the Hold switch when you\u2019re not using your iPod. This will prevent iPod from accidentally waking up and using unnecessary power. If you\u2019re not listening to your iPod, pause it, or turn it off by pressing the Play button for two seconds. Equalizer (EQ). Adding EQ to playback increases use of your iPod processor, since EQ isn\u2019t encoded in the song. Turn EQ off if you don\u2019t use it. If, however, you\u2019ve added EQ to tracks in iTunes, you\u2019ll need to set EQ to \u201cflat\u201d in order to have the effect of \u201coff,\u201d because iPod keeps your iTunes settings intact. Backlight. Setting the backlight to \u201calways on\u201d will significantly reduce your battery life. Use the backlight only when necessary.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Optimize your settings.",
+      "id": "b97b26b9-c0fc-4279-9dc7-1fe9387c2d88"
+    },
+    {
+      "parent_id": "c5862e7a-4a06-4e8c-9a2b-9718fcad64bf",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Make sure your computer is plugged in and powered on when you\u2019re using it to charge your iPod via USB. If your iPod is connected to a computer that\u2019s turned off or is in sleep or standby mode, the iPod battery may drain.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Plug in and power on your computer to charge your\u00a0iPod.",
+      "id": "076e00b6-2095-4e1c-8ad1-c1522110abc8"
+    },
+    {
+      "parent_id": "d90eb79d-4a4a-4751-b9d2-d3e8d981bcc3",
+      "direction": "ltr",
+      "type": "h3",
+      "content": [
+        {
+          "text": "",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Tips for MacBook Air and MacBook\u00a0Pro.",
+      "id": "a06ce686-df26-413b-a408-a697fa45cbdb"
+    },
+    {
+      "parent_id": "a06ce686-df26-413b-a408-a697fa45cbdb",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Always make sure your MacBook is using the latest version of OS X. If you\u2019re connected to the Internet, OS X automatically checks for software updates every week, but you still control when the updates are installed. To confirm that you\u2019re using the latest software, go to the Apple menu and choose Software Update. Learn more about updating OS X",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Update to the latest software.",
+      "id": "a0f1e1b4-8934-4160-8cc5-eb2cc2fcdd49"
+    },
+    {
+      "parent_id": "a06ce686-df26-413b-a408-a697fa45cbdb",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Energy. The Energy Saver preference pane includes several settings that determine power levels for your MacBook. Your MacBook knows when it\u2019s plugged in and runs accordingly. When using battery power, it dims the screen and uses other components sparingly. If you change this setting to maximize performance, your battery will drain more quickly. Brightness. Dim the screen to the lowest comfortable level to achieve maximum battery life. For instance, when watching a video on an airplane, you may not need full brightness if the cabin lights are off. Wi-Fi. Wi-Fi consumes power, even if you are not using it to connect to a network. You can turn it off in the Wi-Fi status menu in the menu bar or in Network preferences. Applications and peripherals. Disconnect peripherals and quit applications not in use. Eject an SD card if you\u2019re not currently accessing it.",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Optimize your settings.",
+      "id": "0f1bdfb7-5382-426b-897a-13e242c61016"
+    },
+    {
+      "parent_id": "a06ce686-df26-413b-a408-a697fa45cbdb",
+      "direction": "ltr",
+      "type": "h4",
+      "content": [
+        {
+          "text": "Make sure your MacBook is plugged in and powered on when you\u2019re using it to charge other devices via USB. Otherwise those devices may drain the battery in your MacBook faster than normal. If another device is connected to your MacBook when it\u2019s turned off or in sleep or standby mode, the device\u2019s battery may drain. \u00a0",
+          "media_type": "text/plain"
+        }
+      ],
+      "title": "Plug in and power on your MacBook to charge other devices.",
+      "id": "ee41927f-e091-4e04-946d-26dedc4840e0"
+    }
+  ],
+  "media_type_detected": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "timestamp": "2016-11-17T22:10:25.449Z"
+}
