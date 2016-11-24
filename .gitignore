@@ -8,3 +8,4 @@ ODM/dyndialog-dialogRules/resources/
 ODM/dyndialog-dataNeedsRules/output/
 ODM/dyndialog-dataNeedsRules/reports/
 ODM/dyndialog-dataNeedsRules/resources/
+*.pyc
