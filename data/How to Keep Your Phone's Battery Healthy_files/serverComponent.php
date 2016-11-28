@@ -1,2 +1,0 @@
-
-Bootstrapper._serverTime = '2016-11-14 20:45:40'; Bootstrapper._clientIP = '108.199.129.124'; var psj0 = 'http://nexus.ensighten.com/hearst/mag/code/13ae709a8b4b0ab031937f285332707a.js?conditionId0=256210';Bootstrapper.loadScriptCallback(psj0, Bootstrapper.callOnPageSpecificCompletion);Bootstrapper.setPageSpecificDataDefinitionIds([])

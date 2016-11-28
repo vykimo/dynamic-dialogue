@@ -1,0 +1,1 @@
+curl -X DELETE -u "f2110ef5-acfa-48e5-abe3-1dbca267130f":"NKrC0BaC8HpR" "https://gateway.watsonplatform.net/retrieve-and-rank/api/v1/rankers/766366x22-rank-240" 

@@ -1,0 +1,10 @@
+{
+    "parameters": {
+      "url": "https://gateway.watsonplatform.net/retrieve-and-rank/api",
+      "password": "NKrC0BaC8HpR",
+      "username": "f2110ef5-acfa-48e5-abe3-1dbca267130f",
+      "clusterId":"scbebb9f60_5ace_414f_86dd_bb9ff241ffda",
+      "collectionName":"BatteryCollection",
+      "rankerId": "76643bx23-rank-242"
+    }
+}

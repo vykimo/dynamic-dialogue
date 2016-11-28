@@ -1,0 +1,1 @@
+python RRtrain.py -u "f2110ef5-acfa-48e5-abe3-1dbca267130f":"NKrC0BaC8HpR" -i "training-set.csv" -c scbebb9f60_5ace_414f_86dd_bb9ff241ffda -x BatteryCollection -d -v -n "BatteryRanker" 
