@@ -1,28 +1,31 @@
-var theCtrls = angular.module('Ctrls', [ 'ngRoute','ui.bootstrap']);
+var theCtrls = angular.module('Ctrls', [ 'ngRoute','ui.bootstrap', 'ngMaterial', 'ngCookies']);
 
 var app = angular.module('DDApp');
 
 var assessment={}
 
 app.config(['$routeProvider',
-     function($routeProvider) {
-		// present the list of projects, and the ability to add new project
-	    $routeProvider.when('/dd',
-	    		{templateUrl: 'partials/Main.html',
-	    		controller: 'HomeCtrl'});
-	    $routeProvider.when('/dialog',
-	    		{templateUrl: 'partials/Dialog.html',
-	    		controller: 'DialogCtrl',
-	    		resolve : {
-	    			a : function(ddService) {
-							return ddService.getAssessment();
-						}
-//					]}
-	            }
-	    		}
-	    );
-	    $routeProvider.otherwise({redirectTo: '/dd'});
-    }
+  function($routeProvider) {
+    // present the list of projects, and the ability to add new project
+    $routeProvider.when('/dd',{
+      templateUrl: 'partials/Main.html',
+      controller: 'HomeCtrl'
+    });
+    $routeProvider.when('/dialog',{
+      templateUrl: 'partials/Dialog.html',
+      controller: 'DialogCtrl',
+      resolve : {
+        a : function(ddService) {
+          return ddService.getAssessment();
+        }
+      }
+    });
+    $routeProvider.when('/login',{
+      templateUrl: 'partials/Login.html',
+      controller: 'HomeCtrl'
+    });
+    $routeProvider.otherwise({redirectTo: '/login'});
+  }
 ]);
 
 /**
@@ -30,8 +33,11 @@ app.config(['$routeProvider',
  * functions:
  * - query entry form and ask button
  */
-theCtrls.controller('HomeCtrl',  ['$scope','$location','ddService','$http','$sce',
-      function ($scope,$location,ddService,$http,$sce) {		
+theCtrls.controller('HomeCtrl',  ['$scope', '$rootScope', '$location','ddService','$http','$sce', '$mdDialog', '$cookies',
+      function ($scope,$rootScope,$location,ddService,$http,$sce,$mdDialog,$cookies) {		
+      // Check if a username has been provided. Prompt for one if this is not the case
+      //if ($cookies.get('username') === undefined) {
+
 			if ($scope.introduction === undefined){
 				$http.get("data/intro.json").then(function(response) {
 			          $scope.introduction= $sce.trustAsHtml(response.data.content);
@@ -40,11 +46,49 @@ theCtrls.controller('HomeCtrl',  ['$scope','$location','ddService','$http','$sce
 		      });
 			}
 			$scope.title="Context Driven Dialog";
+      $rootScope.username=$cookies.get('username')
+      
+      // when user pushes the login button in /login
+      $scope.showLoginPrompt = function(ev) {
+        var confirm = $mdDialog.prompt()
+          .title('Please enter your username')
+          .textContent('This simulates a login dialog box')
+          .placeholder('Login info')
+          .ariaLabel('Login info')
+          .initialValue('Bill')
+          .ok('Sign in')
+          .cancel('Use defaults');
+          
+        $mdDialog.show(confirm).then(function(username) {
+          $cookies.put('username', username);
+          $location.path('/dd');
+        }, function() {
+          $cookies.put('username', 'Bill');
+          $location.path('/dd');
+        });
+      };
+      
+      // when user clicks logout
+      $rootScope.logout = function() {
+        $cookies.remove('username');
+        $location.path('/')
+      };
+      
+      $rootScope.usernameDefined = function() {
+        alert($cookies.get('username'));
+        if ($cookies.get('username')) {
+          alert('returning true');
+          return true;
+        } else {
+          alert('returning false');
+          return false;
+        }
+      };
 	
 			// when user pushes query button
 			$scope.helpMe = function(query) {
 				 var cq={}
-				 cq.userId="bob";
+				 cq.userId=$cookies.get('username');
 				 cq.firstQueryContent=query;
 				 $http({
 					    method:'POST',
@@ -67,8 +111,8 @@ theCtrls.controller('HomeCtrl',  ['$scope','$location','ddService','$http','$sce
       }	
 ]);// home ctrl
 
-theCtrls.controller('DialogCtrl',  ['$scope','$location','ddService','$http',
-    function ($scope,$location,ddService,$http) {
+theCtrls.controller('DialogCtrl',  ['$scope','$location','ddService','$http','$cookies',
+    function ($scope,$location,ddService,$http,$cookies) {
        		$scope.title="Assessing...";
        		$scope.assessment=ddService.getAssessment()
        		$scope.question=$scope.assessment.nextQuestion;
@@ -77,7 +121,7 @@ theCtrls.controller('DialogCtrl',  ['$scope','$location','ddService','$http',
     	 	if ($scope.question){
     	 		$scope.response.questionLabel=$scope.question.label;
     		}
-    	 	$scope.recommendations=[]
+        $scope.recommendations=[]
     	 	
     	 	$scope.assess = function(r) {
     	    	$scope.assessment.lastResponse=r;
@@ -102,8 +146,8 @@ theCtrls.controller('DialogCtrl',  ['$scope','$location','ddService','$http',
     		  		},function(error) {
     					alert("Query failed.");
     				}); 
-    	    }
-          } // constructor                  
+        }
+    } // constructor                  
 ]);
 	
 
