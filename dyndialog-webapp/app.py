@@ -68,8 +68,9 @@ def assessClasse():
 @app.route("/dd/api/a/classify",methods=['POST'])
 def classifyFirstUserQuery():
   userQuery=request.get_json()
+  print userQuery
   aQuery=userQuery['firstQueryContent']
-  print aQuery
+  userId = userQuery['userId']
   
   # Pass the query to the Natural Language Classifier. 
   # The natural language classifier returns a collection of classifications ordered by confidence. 
@@ -87,7 +88,7 @@ def classifyFirstUserQuery():
   userQuery['acceptedCategory']=categories['top_class']
 
   # Create an assessment object that holds all the information we have gathered so far
-  assessment=buildAssessment("Bill")
+  assessment=buildAssessment(userId)
   assessment['customerQuery']=userQuery
 
   # Each potential category may have a different flow. 
