@@ -74,17 +74,6 @@ theCtrls.controller('HomeCtrl',  ['$scope', '$rootScope', '$location','ddService
         $location.path('/')
       };
       
-      $rootScope.usernameDefined = function() {
-        alert($cookies.get('username'));
-        if ($cookies.get('username')) {
-          alert('returning true');
-          return true;
-        } else {
-          alert('returning false');
-          return false;
-        }
-      };
-	
 			// when user pushes query button
 			$scope.helpMe = function(query) {
 				 var cq={}
