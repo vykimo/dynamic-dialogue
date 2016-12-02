@@ -2,32 +2,28 @@
 stages:
 - name: Build Stage
   inputs:
-  - url: {{REPO}}
-    type: git
+  - type: git
     branch: master
-    dir_name: null
   triggers:
   - type: commit
   jobs:
   - name: Build
     type: builder
-    artifact_dir: ''
-- name: Create Services
+- name: Deploy Stage
   inputs:
   - type: job
     stage: Build Stage
     job: Build
-    dir_name: null
   triggers:
   - type: stage
   jobs:
-  - name: Deploy
+  - name: Deploy Services
     type: deployer
     target:
       region_id: ${REGION}
       organization: ${ORG}
       space: ${SPACE}
-    script: |+
+    script: |
       #!/bin/bash
       cf create-service natural_language_classifier standard NaturalLanguageClassifier
       cf create-service businessrules standard BusinessRules
@@ -37,11 +33,10 @@ stages:
   - type: job
     stage: Build Stage
     job: Build
-    dir_name: null
   triggers:
   - type: stage
   jobs:
-  - name: Deploy
+  - name: Deploy application
     type: deployer
     target:
       region_id: ${REGION}

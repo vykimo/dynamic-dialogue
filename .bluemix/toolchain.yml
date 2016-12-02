@@ -38,7 +38,6 @@ pipeline-context-driven-dialog:
        REGION: "{{deploy.parameters.deploy-region}}"
        ORG: "{{deploy.parameters.deploy-organization}}"
        SPACE: "{{deploy.parameters.deploy-space}}"
-       ROUTE_DOMAIN: "{{deploy.parameters.route-domain}}"
     services: ["git-context-driven-dialog"]
 
 deploy:
