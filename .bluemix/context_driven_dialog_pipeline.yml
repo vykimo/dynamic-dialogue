@@ -1,32 +1,47 @@
 ---
 stages:
+- name: Build Stage
+  inputs:
+  - url: {{REPO}}
+    type: git
+    branch: master
+    dir_name: null
+  triggers:
+  - type: commit
+  jobs:
+  - name: Build
+    type: builder
+    artifact_dir: ''
 - name: Create Services
   inputs:
   - type: job
-    stage: BUILD
+    stage: Build Stage
     job: Build
+    dir_name: null
   triggers:
   - type: stage
   jobs:
-  - name: Create Services
+  - name: Deploy
     type: deployer
     target:
       region_id: ${REGION}
       organization: ${ORG}
       space: ${SPACE}
-    script: |
+    script: |+
       #!/bin/bash
       cf create-service natural_language_classifier standard NaturalLanguageClassifier
       cf create-service businessrules standard BusinessRules
-- name: Deploy Application
+
+- name: Deploy Stage
   inputs:
   - type: job
-    stage: BUILD
+    stage: Build Stage
     job: Build
+    dir_name: null
   triggers:
   - type: stage
   jobs:
-  - name: Deploy application
+  - name: Deploy
     type: deployer
     target:
       region_id: ${REGION}
@@ -36,5 +51,9 @@ stages:
       #!/bin/bash
       cf push "${CF_APP}"
       # View logs
-      cf logs "${CF_APP}" --recent      
-      
+      cf logs "${CF_APP}" --recent
+hooks:
+- enabled: true
+  label: null
+  ssl_enabled: false
+  url: https://devops-api.ng.bluemix.net/v1/messaging/webhook/publish
