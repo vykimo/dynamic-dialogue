@@ -1,0 +1,95 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "'Context Driven Dialog' Toolchain Deployment to Bluemix",
+    "description": "'Context Driven Dialog' toolchain",
+    "longDescription": "Information entered here will be used at deployment time.",
+    "type": "object",
+    "properties": {
+        "deploy-region": {
+            "description": "Deploy to this Bluemix Region",
+            "type": "string"
+        },
+        "deploy-organization": {
+            "description": "Deploy to this Bluemix Organization",
+            "type": "string"
+        },
+        "deploy-space": {
+            "description": "Deploy to this space",
+            "type": "string"
+        },
+        "branch": {
+            "description": "Branch to build from. Example: master",
+            "type": "string"
+        }
+        ,
+        "unique-identifier": {
+            "description": "Unique identifier for your apps. Example: your surname",
+            "type": "string"
+        }
+    },
+    "required": ["deploy-region", "deploy-organization", "deploy-space", "branch", "route-domain"],
+    "form": [
+        {
+            "type": "validator",
+            "url": "/devops/setup/bm-helper/helper.html"
+        },
+        {
+            "type": "text",
+            "readonly": false,
+            "title": "Domain name for all routes",
+            "key": "route-domain"
+        },
+        {
+            "type": "text",
+            "readonly": false,
+            "title": "Branch to build from",
+            "key": "branch"
+        },
+        {
+            "type": "text",
+            "readonly": false,
+            "title": "Unique Identifier",
+            "key": "unique-identifier"
+        },
+        {
+            "type": "table",
+            "columnCount": 4,
+            "widths": ["15%", "28%", "28%", "28%"],
+            "items": [
+                {
+                    "type": "label",
+                    "title": ""
+                },
+                {
+                    "type": "label",
+                    "title": "Region"
+                },
+                {
+                    "type": "label",
+                    "title": "Organization"
+                },
+                {
+                    "type": "label",
+                    "title": "Space"
+                },
+                {
+                    "type": "label",
+                    "title": "Deploy to"
+                },
+                {
+                    "type": "select",
+                    "key": "deploy-region"
+                },
+                {
+                    "type": "select",
+                    "key": "deploy-organization"
+                },
+                {
+                    "type": "select",
+                    "key": "deploy-space",
+                    "readonly": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+---
+stages:
+- name: Create Services
+  inputs:
+  - type: job
+    stage: BUILD
+    job: Build
+  triggers:
+  - type: stage
+  jobs:
+  - name: Create Services
+    type: deployer
+    target:
+      region_id: ${REGION}
+      organization: ${ORG}
+      space: ${SPACE}
+    script: |
+      #!/bin/bash
+      cf create-service natural_language_classifier standard NaturalLanguageClassifier
+      cf create-service businessrules standard BusinessRules
+- name: Deploy Application
+  inputs:
+  - type: job
+    stage: BUILD
+    job: Build
+  triggers:
+  - type: stage
+  jobs:
+  - name: Deploy application
+    type: deployer
+    target:
+      region_id: ${REGION}
+      organization: ${ORG}
+      space: ${SPACE}
+    script: |
+      #!/bin/bash
+      cf push "${CF_APP}"
+      # View logs
+      cf logs "${CF_APP}" --recent      
+      

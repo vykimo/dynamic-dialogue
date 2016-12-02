@@ -11,3 +11,4 @@ applications:
   command: python app.py
   services:
   - NaturalLanguageClassifier
+  - BusinessRules
