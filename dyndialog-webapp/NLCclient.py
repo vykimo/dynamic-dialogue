@@ -16,7 +16,7 @@ class NLClassifier(object):
     self.classifier['name'] = classifier['name']
     self.classifier['training_file'] = classifier['training_file']
 
-    c = self.natural_language_classifier.list()
+    c = self.natural_language_classifier.list_classifiers()
     if any(d['name'] == self.classifier['name'] for d in c['classifiers'] ):
       self.classifier['id'] = [ d['classifier_id'] for d in c['classifiers'] if d['name'] == self.classifier['name'] ][0]
       print 'Found classifier id %s ' % self.classifier['id']
